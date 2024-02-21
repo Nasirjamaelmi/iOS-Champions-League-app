@@ -79,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				B1EEA5602B83773000299C5F /* Model */,
-				B1EEA55E2B83770200299C5F /* View */,
 				B1EEA55D2B8376F000299C5F /* Data */,
 				B1EEA5322B8376E200299C5F /* championsleague */,
 				B1EEA5432B8376E400299C5F /* championsleagueTests */,
@@ -140,13 +139,6 @@
 				B1EEA5612B83775900299C5F /* championsleague.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		B1EEA55E2B83770200299C5F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B1EEA5602B83773000299C5F /* Model */ = {

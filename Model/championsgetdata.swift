@@ -18,10 +18,7 @@ class FootballModel{
     
     
     func loadfeed() async {
-        guard let url = URL(string:
-                                "https://www.fotmob.com/_next/data/4355/en/leagues/42/overview/champions-league.json?id=42&tab=overview&slug=champions-league"
-                            
-        )
+        guard let url = URL(string:"https://www.fotmob.com/api/leagues?id=42&ccode3=SWE")
         else {
             return
         }
@@ -31,11 +28,10 @@ class FootballModel{
         do{
             let (data,_) = try await URLSession.shared.data(from: url)
             print(data)
-            let decodeData = try JSONDecoder().decode(ChampionsLeagueData.self, from: data)
-            self.footballData = decodeData
-            
-            
-        }
+            let football = try JSONDecoder().decode(ChampionsLeagueData.self, from:data)
+            footballData = football
+            print(football)
+            }
         catch{
             print(error)
         }

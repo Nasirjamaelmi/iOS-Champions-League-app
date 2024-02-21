@@ -88,7 +88,7 @@ struct ChampionsLeagueData: Decodable {
         }
     }
     
-    // MARK: - Fantasy League Player Stats Structure
+    // MARK: - Fantasy League Player Stats
     struct PlayerStats: Decodable, Identifiable {
         var playerId: String
         var playerName: String
