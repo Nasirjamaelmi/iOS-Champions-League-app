@@ -75,9 +75,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1089C52B860C0200A05D0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B1EEA5272B8376E200299C5F = {
 			isa = PBXGroup;
 			children = (
+				0F1089C52B860C0200A05D0B /* View */,
 				B1EEA5602B83773000299C5F /* Model */,
 				B1EEA55D2B8376F000299C5F /* Data */,
 				B1EEA5322B8376E200299C5F /* championsleague */,
