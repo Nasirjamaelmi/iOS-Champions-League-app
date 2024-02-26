@@ -8,116 +8,136 @@
 import Foundation
 
 struct ChampionsLeagueData: Decodable {
-    let matches: [Match]
-    let standings: [Standing]
-    let groupTables: [GroupTable]
+    let details: LeagueDetails
+    let table: [TableData]
+    let matches: MatchData
     
-    enum CodingKeys: String, CodingKey {
-        case matches, standings, groupTables = "tables"
+    struct LeagueDetails: Decodable {
+        let id: Int
+        let type: String
+        let name: String
+        let selectedSeason: String
+        let latestSeason: String
+        let shortName: String
+        let country: String
+    }
+    
+    struct TableData: Decodable{
+        let data: TableDataContent
+        
+        struct TableDataContent: Decodable {
+            let composite: Bool
+            let ccode: String
+            let leagueId: Int
+            let pageUrl: String
+            let leagueName: String
+            let legend: [Legend]
+            let tables: [GroupTable]
+            
+            struct Legend: Decodable {
+                let title: String
+                let tKey: String
+                let color: String
+                let indices: [Int]
+            }
+            
+            struct GroupTable: Decodable {
+                let ccode: String
+                let leagueId: Int
+                let pageUrl: String
+                let leagueName: String
+                let legend: [Legend]
+                let table: Group
+                
+                struct Group: Decodable {
+                    let all: [Team]
+                    
+                    struct Team: Decodable, Identifiable {
+                        let name: String
+                        let shortName: String
+                        let id: Int
+                        let pageUrl: String
+                        let played: Int
+                        let wins: Int
+                        let draws: Int
+                        let losses: Int
+                        let scoresStr: String
+                        let goalConDiff: Int
+                        let pts: Int
+                        let idx: Int
+                        
+                        
+                        var idString: String {
+                            "\(id)"
+                        }
+                    }
+                }
+            }
+        }
     }
     
     
-    struct Match: Decodable, Identifiable {
-        let id: String
-        let date: String
-        let homeTeam: TeamDetail
-        let awayTeam: TeamDetail
-        let score: ScoreDetail?
+    
+    struct MatchData: Decodable {
+        let firstUnplayedMatch: FirstUnplayedMatch
+        let allMatches: [Match]
         
-        enum CodingKeys: String, CodingKey {
-            case id, date, homeTeam, awayTeam, score
+        struct FirstUnplayedMatch: Decodable {
+            let firstRoundWithUnplayedMatch: Int
+            let firstUnplayedMatchIndex: Int
+            let firstUnplayedMatchId: String
         }
         
-        
-        struct TeamDetail: Decodable {
-            let name: String
+        struct Match: Decodable, Identifiable {
+            let round: Int
+            let roundName: String
+            let pageUrl: String
             let id: String
+            let home: Team
+            let away: Team
+            let status: Status
             
             enum CodingKeys: String, CodingKey {
-                case name, id
+                case round, roundName, pageUrl, id, home, away, status
             }
-        }
-        
-        
-        struct ScoreDetail: Decodable {
-            let fullTime: String?
-            let halfTime: String?
             
-            enum CodingKeys: String, CodingKey {
-                case fullTime = "full_time"
-                case halfTime = "half_time"
+            init(from decoder: Decoder) throws {
+                let container: KeyedDecodingContainer<CodingKeys> = try decoder.container(keyedBy: CodingKeys.self)
+                self.round = try container.decode(Int.self, forKey: .round)
+                self.pageUrl = try container.decode(String.self, forKey: .pageUrl)
+                self.home = try container.decode(Team.self, forKey: .home)
+                self.id = try container.decode(String.self, forKey: .id)
+                self.away = try container.decode(Team.self, forKey: .away)
+                self.status = try container.decode(Status.self, forKey: .status)
+                do{
+                    roundName = try String(container.decode(Int.self, forKey: .roundName))
+                }catch DecodingError.typeMismatch{
+                    roundName = try container.decode(String.self, forKey: .roundName)
+                }
             }
-        }
-    }
-    
-    
-    struct Standing: Decodable, Identifiable {
-        let id: String
-        let team: String
-        let playedGames: Int
-        let wins: Int
-        let draws: Int
-        let losses: Int
-        let points: Int
-        
-        enum CodingKeys: String, CodingKey {
-            case id, team, playedGames = "played_games", wins, draws, losses, points
-        }
-    }
-    
-    
-    struct GroupTable: Decodable {
-        let ccode: String
-        let leagueId: Int
-        let pageUrl: String
-        let leagueName: String
-        let legend: [Legend]
-        
-        enum CodingKeys: String, CodingKey {
-            case ccode, leagueId, pageUrl, leagueName, legend
-        }
-        
-        
-        struct Legend: Decodable {
-            let position: Int
-            let description: String
             
-            enum CodingKeys: String, CodingKey {
-                case position, description
+            struct Team: Decodable {
+                let name: String
+                let shortName: String
+                let id: String
+            }
+            
+            struct Status: Decodable {
+                let utcTime: String
+                let finished: Bool
+                let started: Bool
+                let cancelled: Bool
+                let scoreStr: String?
+                let reason: Reason?
+                
+                struct Reason: Decodable {
+                    let short: String
+                    let shortKey: String
+                    let long: String
+                    let longKey: String
+                }
             }
         }
-    }
-    
-    // MARK: - Fantasy League Player Stats
-    struct PlayerStats: Decodable, Identifiable {
-        var playerId: String
-        var playerName: String
-        var teamId: String
-        var teamName: String
-        var gamesPlayed: Int
-        var goals: Int
-        var assists: Int
-        var shotsOnTarget: Int
-        var passingAccuracy: Double
-        var yellowCards: Int
-        var redCards: Int
-
-        enum CodingKeys: String, CodingKey {
-            case playerId = "player_id"
-            case playerName = "player_name"
-            case teamId = "team_id"
-            case teamName = "team_name"
-            case gamesPlayed = "games_played"
-            case goals, assists
-            case shotsOnTarget = "shots_on_target"
-            case passingAccuracy = "passing_accuracy"
-            case yellowCards = "yellow_cards"
-            case redCards = "red_cards"
-        }
-
-        var id: String { playerId }
     }
 }
-    
-
 

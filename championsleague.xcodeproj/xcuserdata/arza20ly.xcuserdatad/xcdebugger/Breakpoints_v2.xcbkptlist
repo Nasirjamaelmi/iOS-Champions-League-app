@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D8E0322A-4936-4D08-AFDA-21A3E07AC11C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Model/championsgetdata.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadfeed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - db82029b068bddea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - fc76c73ad7e29d87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - 9c8489a1163e8194"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - c03bd53a1f9b2f97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
