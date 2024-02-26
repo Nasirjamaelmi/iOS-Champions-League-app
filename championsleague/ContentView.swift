@@ -10,11 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State var champ = FootballModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-             homeScreen()
+        VStack(alignment: .leading) {
+             tabScreen()
         } 
         .padding()
         .task {

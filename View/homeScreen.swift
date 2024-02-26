@@ -8,12 +8,36 @@
 import SwiftUI
 import Foundation
 
+
+struct tabScreen: View {
+    var body: some View {
+        TabView{
+            homeScreen()
+                .tabItem {
+                    Label("Home", systemImage: "house.circle.fill")
+                }
+            MatchesScreen()
+                .tabItem {
+                    Label("Matches" ,systemImage: "figure.soccer")
+                }
+            StandingsScreen()
+                .tabItem {
+                    Label("Standings" , systemImage: "soccerball")
+                }
+            StatsScreen()
+                .tabItem {
+                    Label("Stats", systemImage: "list.clipboard")
+                }
+        }
+    }
+}
+
+
 struct homeScreen: View {
 
     var body: some View {
-      
         NavigationView {
-                   VStack {
+                   VStack() {
                        ScrollView(.horizontal, showsIndicators: false) {
                            HStack(spacing: 20) {
                                ForEach(0..<10) { _ in
@@ -22,46 +46,55 @@ struct homeScreen: View {
                            }
                        }
                        Spacer()
-                      
-                       Text("Welcome to Your App")
-                           .font(.title)
-                           .padding()
+                       VStack(spacing: 20){
+                           Text("Upcoming Matches")
+                           ForEach(0..<3) { i in
+                               UpcomingMatchView()
+                           }
+                            
+                            
+                               
+                       }
+                       
 
                        // Add more content here as needed
 
-                       NavigationLink(destination: DetailScreen()) {
-                           Text("Go to Detail Screen")
-                               .foregroundColor(.blue)
-                               .padding()
-                        
-                       }
-                       TabView{
-                           NavigationStack{
-                               
-                               DetailScreen()
-                           }
-                           .tabItem {
-                               Label("profile", systemImage: "person.fill")
-                           }
-                           
-                       }
                    }
                    .navigationTitle("Home")
+               
                }
            }
 }
 
-struct DetailScreen: View {
+struct MatchesScreen: View {
     var body: some View {
-        Text("Detail Screen")
+        Text("Matches Screen")
             .font(.title)
             .padding()
-            .navigationTitle("Detail")
+            .navigationTitle("Matches")
+    }
+}
+
+struct StandingsScreen: View {
+    var body: some View {
+        Text("Standings Screen")
+            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            .padding()
+            .navigationTitle("Standings")
+    }
+}
+
+struct StatsScreen: View {
+    var body: some View {
+        Text("Stats Screen")
+            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            .padding()
+            .navigationTitle("Stats Screen")
     }
 }
 
 
 #Preview {
-    homeScreen()
+    tabScreen()
         
 }
