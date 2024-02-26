@@ -16,12 +16,8 @@ struct homeScreen: View {
                    VStack {
                        ScrollView(.horizontal, showsIndicators: false) {
                            HStack(spacing: 20) {
-                               ForEach(0..<10) {
-                                   Text("Item \($0)")
-                                       .foregroundStyle(.white)
-                                       .font(.largeTitle)
-                                       .frame(width: 50, height: 50)
-                                       .background(.red)
+                               ForEach(0..<10) { _ in
+                                   MatchCardView(match: nil)
                                }
                            }
                        }
