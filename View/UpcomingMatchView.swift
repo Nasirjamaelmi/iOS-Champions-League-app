@@ -17,18 +17,48 @@ struct UpcomingMatchView: View {
                 .foregroundStyle(.green)
             
             HStack {
-                Text(match.home.name)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(match.home.name)
+                    Text("vs")
+                    Text(match.away.name)
+                }
                 
-                // You might not have the score for upcoming matches, so adjust as needed
-                Text(match.status.scoreStr ?? "vs")
+                Spacer()
                 
-                Text(match.away.name)
+    
+                if let matchDate = match.status.utcTime.toDate() {
+                    Text(matchDate, formatter: matchDateFormatter)
+                        .fontWeight(.semibold)
+                } else {
+                    Text("Date TBA")
+                        .fontWeight(.semibold)
+                }
             }
-            .fontWeight(.semibold)
+            .padding()
             .foregroundStyle(.white)
         }
     }
+
+
+    var matchDateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }
 }
+
+
+extension String {
+    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        return dateFormatter.date(from: self)
+    }
+}
+
 
 /*
 #Preview {
