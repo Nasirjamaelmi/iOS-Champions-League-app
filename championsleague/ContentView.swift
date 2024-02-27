@@ -11,8 +11,8 @@ struct ContentView: View {
     @State var champ = FootballModel()
     var body: some View {
         VStack(alignment: .leading) {
-             tabScreen()
-        } 
+             tabScreen() 
+        }
         .padding()
         .task {
             await champ.loadfeed()

@@ -34,16 +34,23 @@ struct tabScreen: View {
 
 
 struct homeScreen: View {
+    let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
+    let colorDark = UIColor(red: 0x39, green:0x47, blue: 0x38)
+
 
     var body: some View {
         NavigationView {
+            
                    VStack() {
                        ScrollView(.horizontal, showsIndicators: false) {
-                           HStack(spacing: 20) {
+                           HStack(spacing: 30) {
                                ForEach(0..<10) { _ in
                                    MatchCardView(match: nil)
                                }
+                               
                            }
+                           .padding(50)
+                           .background(Color(colorDark))
                        }
                        Spacer()
                        VStack(spacing: 20){
@@ -61,8 +68,13 @@ struct homeScreen: View {
 
                    }
                    .navigationTitle("Home")
+                   .background(Color(colorGreen))
+                   .foregroundColor(.white)
+             
                
                }
+ 
+                
            }
 }
 
