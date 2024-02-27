@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchCardView: View {
-    let match: ChampionsLeagueData.MatchData.Match?
+    let match: ChampionsLeagueData.MatchData.Match
     
     var body: some View {
         ZStack {
@@ -17,11 +17,11 @@ struct MatchCardView: View {
                 .foregroundStyle(.green)
             
             HStack {
-                Text(match?.home.name ?? "Barca")
+                Text(match.home.name)
                 
-                Text(match?.status.scoreStr ?? "2-2")
+                Text(match.status.scoreStr ?? "-")
                 
-                Text(match?.away.name ?? "City")
+                Text(match.away.name)
             }
             .fontWeight(.semibold)
             .foregroundStyle(.white)
@@ -29,7 +29,7 @@ struct MatchCardView: View {
     }
 }
 
-#Preview {
+//#Preview {
     
-    MatchCardView(match: nil)
-}
+   // MatchCardView(match: nil)
+//}

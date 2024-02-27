@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UpcomingMatchView: View {
-    
-    
+    let match: ChampionsLeagueData.MatchData.Match
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
@@ -17,11 +17,12 @@ struct UpcomingMatchView: View {
                 .foregroundStyle(.green)
             
             HStack {
-                Text( "Barca")
+                Text(match.home.name)
                 
-                Text( "2-2")
+                // You might not have the score for upcoming matches, so adjust as needed
+                Text(match.status.scoreStr ?? "vs")
                 
-                Text("City")
+                Text(match.away.name)
             }
             .fontWeight(.semibold)
             .foregroundStyle(.white)
@@ -29,6 +30,8 @@ struct UpcomingMatchView: View {
     }
 }
 
+/*
 #Preview {
-    UpcomingMatchView()
+    UpcomingMatchView(match: <#T##ChampionsLeagueData.MatchData.Match#>)
 }
+*/

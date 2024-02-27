@@ -36,47 +36,135 @@ struct tabScreen: View {
 struct homeScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let colorDark = UIColor(red: 0x39, green:0x47, blue: 0x38)
-
-
+    let footballModel = FootballModel()
+    
+    var upcomingMatches: [ChampionsLeagueData.MatchData.Match] {
+            footballModel.footballData?.matches.allMatches.filter { !$0.status.started } ?? []
+        }
+    
+    
     var body: some View {
-        NavigationView {
-            
-                   VStack() {
-                       ScrollView(.horizontal, showsIndicators: false) {
-                           HStack(spacing: 30) {
-                               ForEach(0..<10) { _ in
-                                   MatchCardView(match: nil)
-                               }
-                               
-                           }
-                           .padding(50)
-                           .background(Color(colorDark))
-                       }
-                       Spacer()
-                       VStack(spacing: 20){
-                           Text("Upcoming Matches")
-                           ForEach(0..<3) { i in
-                               UpcomingMatchView()
-                           }
-                            
-                            
-                               
-                       }
+            NavigationView {
+                VStack {
+                    // Use a ZStack to overlay the loading indicator on top of the current view
+                    ZStack {
+                        if footballModel.isLoading {
+                            Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .scaleEffect(1.5)
+                        } else {
+                            VStack {
+                                // Live Matches Section
+                                liveMatchesSection
+
+                                Spacer()
+
+                                // Upcoming Matches Section
+                                upcomingMatchesSection
+                            }
+                            .background(Color(colorGreen).edgesIgnoringSafeArea(.all))
+                            .foregroundColor(Color(colorDark))
+                        }
+                    }
+                    .navigationTitle("Home")
+                    .onAppear {
+                        Task {
+                            await footballModel.loadfeed()
+                        }
+                    }
+                }
+            }
+        }
+    
+    // Extracted view for live matches to clean up the body
+    var liveMatchesSection: some View {
+        let liveMatches = footballModel.footballData?.matches.allMatches.filter { $0.status.started && !$0.status.finished } ?? []
+        
+        if liveMatches.isEmpty {
+            return AnyView(Text("No live matches")
+                            .font(.title)
+                            .padding())
+        } else {
+            return AnyView(ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 30) {
+                    ForEach(liveMatches, id: \.id) { match in
+                        MatchCardView(match: match)
+                    }
+                }
+                .padding(50)
+                .background(Color(colorDark).edgesIgnoringSafeArea(.all))
+            })
+        }
+    }
+
+        
+        // Extracted view for upcoming matches to clean up the body
+        var upcomingMatchesSection: some View {
+            VStack(spacing: 20) {
+                Text("Upcoming Matches").font(.headline).padding(.leading)
+                ForEach(Array(upcomingMatches.prefix(6)), id: \.id) { match in
+                    UpcomingMatchView(match: match)
+                        .padding([.leading, .trailing])
+                }
+            }
+        }
+    }
+    
+    /*
+    var body: some View {
+           NavigationView {
+               VStack {
+                   if footballModel.isLoading {
+                       // Show loading indicator while data is being fetched
+                       ProgressView()
+                           .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                           .scaleEffect(1.5)
+                   } else {
+                       // Attempt to filter live matches
+                       let liveMatches = footballModel.footballData?.matches.allMatches.filter { $0.status.started && !$0.status.finished } ?? []
                        
-
-                       // Add more content here as needed
-
+                       if liveMatches.isEmpty {
+                           // Show "No live matches" if there are no live matches
+                           Text("No live matches")
+                               .font(.title)
+                               .foregroundColor(.white)
+                       } else {
+                           // Display live matches if there are any
+                           ScrollView(.horizontal, showsIndicators: false) {
+                               HStack(spacing: 30) {
+                                   ForEach(liveMatches) { match in
+                                       MatchCardView(match: match)
+                                   }
+                               }
+                               .padding(50)
+                               .background(Color(colorDark))
+                           }
+                       }
                    }
-                   .navigationTitle("Home")
-                   .background(Color(colorGreen))
-                   .foregroundColor(.white)
-             
-               
+                   Spacer()
+                   VStack(spacing: 20) {
+                       Text("Upcoming Matches")
+                       ForEach(Array(upcomingMatches.prefix(6)), id: \.id) { match in
+                           UpcomingMatchView(match: match)
+                       }
+                   }
+
+
+
                }
- 
-                
+               .navigationTitle("Home")
+               .background(Color(colorGreen))
+               .foregroundColor(.white)
+               .onAppear {
+                   Task {
+                       await footballModel.loadfeed()
+                   }
+               }
            }
-}
+       }
+   }
+     */
 
 struct MatchesScreen: View {
     var body: some View {
