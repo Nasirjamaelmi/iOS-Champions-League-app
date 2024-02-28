@@ -172,14 +172,7 @@ struct homeScreen: View {
    }
      */
 
-struct MatchesScreen: View {
-    var body: some View {
-        Text("Matches Screen")
-            .font(.title)
-            .padding()
-            .navigationTitle("Matches")
-    }
-}
+
 
 struct StandingsScreen: View {
     var body: some View {
