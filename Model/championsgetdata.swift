@@ -37,7 +37,6 @@ class FootballModel{
         }
        isLoading = false
         
-      //  print(footballData?.table.GroupTable.Group.Team ?? 0)
     }
     
 }

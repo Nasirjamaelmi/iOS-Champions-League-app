@@ -12,6 +12,7 @@ struct ChampionsLeagueData: Decodable {
     let table: [TableData]
     let matches: MatchData
     
+    
     struct LeagueDetails: Decodable {
         let id: Int
         let type: String

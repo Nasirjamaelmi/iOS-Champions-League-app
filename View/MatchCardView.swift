@@ -41,6 +41,13 @@ struct MatchCardView: View {
         }
     }
     
+
+}
+
+
+
+
+extension MatchCardView {
     @ViewBuilder
     func logo(for teamId: String?) -> some View {
         if let teamId = teamId, let url = URL(string: "https://images.fotmob.com/image_resources/logo/teamlogo/\(teamId)_xsmall.png") {
