@@ -30,7 +30,7 @@ class FootballModel{
             print(data)
             let football = try JSONDecoder().decode(ChampionsLeagueData.self, from:data)
             footballData = football
-            print(football)
+          
             }
         catch{
             print(error)

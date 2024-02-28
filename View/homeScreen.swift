@@ -109,7 +109,7 @@ struct homeScreen: View {
         var upcomingMatchesSection: some View {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
                 Text("Upcoming Matches").font(.headline).padding(.leading)
-                ForEach(Array(upcomingMatches.prefix(6)), id: \.id) { match in
+                ForEach(Array(upcomingMatches.prefix(4)), id: \.id) { match in
                     UpcomingMatchView(match: match)
                         .padding([.leading, .trailing])
                 }

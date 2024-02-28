@@ -11,43 +11,73 @@ struct UpcomingMatchView: View {
     let match: ChampionsLeagueData.MatchData.Match
 
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .frame(width: 300, height: 80)
-                .foregroundStyle(.green)
+        HStack {
+            TeamLogoView(teamId: match.home.id)
             
-            HStack {
-                VStack(alignment: .center, spacing: 4) {
-                    Text(match.home.name)
-                    Text("vs")
-                    Text(match.away.name)
-                }
-                
-                Spacer()
-                
-    
+            VStack(alignment: .leading, spacing: 4) {
+                Text(match.home.name)
+                    .fontWeight(.semibold)
+            }
+            
+            Spacer()
+            
+            // Display date and time centered
+            VStack {
                 if let matchDate = match.status.utcTime.toDate() {
                     Text(matchDate, formatter: matchDateFormatter)
                         .fontWeight(.semibold)
                 } else {
-                    Text("Date TBA")
+                    Text("TBA")
                         .fontWeight(.semibold)
                 }
             }
-            .padding()
-            .foregroundStyle(.white)
+            
+            Spacer()
+            
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(match.away.name)
+                    .fontWeight(.semibold)
+            }
+            
+            TeamLogoView(teamId: match.away.id)
         }
+        .padding()
+        .frame(width: 350, height: 80)
+        .background(Color.green)
+        .cornerRadius(12)
+        .foregroundColor(.white)
     }
-
 
     var matchDateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
+        formatter.dateFormat = "dd MMM yyyy HH.mm"
         return formatter
     }
 }
 
+struct TeamLogoView: View {
+    let teamId: String?
+
+    var body: some View {
+        if let teamId = teamId, let url = URL(string: "https://images.fotmob.com/image_resources/logo/teamlogo/\(teamId)_xsmall.png") {
+            AsyncImage(url: url) { image in
+                image.resizable()
+                     .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 40, height: 40)
+            .clipShape(Circle())
+            .shadow(radius: 2)
+        } else {
+            Image(systemName: "sportscourt")
+                .resizable()
+                .frame(width: 40, height: 40)
+                .background(Color.gray.opacity(0.3))
+                .clipShape(Circle())
+        }
+    }
+}
 
 extension String {
     func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") -> Date? {
@@ -58,6 +88,7 @@ extension String {
         return dateFormatter.date(from: self)
     }
 }
+
 
 
 /*

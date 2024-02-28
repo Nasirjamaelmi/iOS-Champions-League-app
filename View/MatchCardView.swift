@@ -17,19 +17,58 @@ struct MatchCardView: View {
                 .foregroundStyle(.green)
             
             HStack {
+
                 Text(match?.home.name ?? "City")
                 
                 Text(match?.status.scoreStr ?? "-")
                  
                 Text(match?.away.name ?? "Barca")
+
+                //logo(for: match.home.id)
+                
+                VStack {
+                   // Text(match.home.name)
+                   // Text(match.status.scoreStr ?? "-")
+                    //Text(match.away.name)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+                //logo(for: match.away.id)
+
             }
             .fontWeight(.semibold)
             .foregroundStyle(.white)
         }
     }
+    
+    @ViewBuilder
+    func logo(for teamId: String?) -> some View {
+        if let teamId = teamId, let url = URL(string: "https://images.fotmob.com/image_resources/logo/teamlogo/\(teamId)_xsmall.png") {
+            AsyncImage(url: url) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 40, height: 40)
+            .clipShape(Circle())
+            .shadow(radius: 2)
+        } else {
+            Image(systemName: "sportscourt")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .background(Color.gray.opacity(0.3))
+                .clipShape(Circle())
+        }
+    }
 }
 
+
 #Preview {
+
+//#Preview {
+
     
 //    let championsLeagueDetailsData = ChampionsLeagueData.LeagueDetails(id: 1, type: "Test Type", name: "Test name", selectedSeason: "2024/2025", latestSeason: "2024/2025", shortName: "Test short name", country: "Sweden")
 //    
