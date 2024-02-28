@@ -13,7 +13,7 @@ struct ContentView: View {
         VStack(alignment: .leading) {
              tabScreen() 
         }
-        .padding()
+        
         .task {
             await champ.loadfeed()
         }

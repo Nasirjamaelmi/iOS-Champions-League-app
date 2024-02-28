@@ -35,7 +35,7 @@ class FootballModel{
         catch{
             print(error)
         }
-        isLoading = false
+       isLoading = false
         
       //  print(footballData?.table.GroupTable.Group.Team ?? 0)
     }

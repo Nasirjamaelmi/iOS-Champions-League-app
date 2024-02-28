@@ -17,7 +17,7 @@ struct UpcomingMatchView: View {
                 .foregroundStyle(.green)
             
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .center, spacing: 4) {
                     Text(match.home.name)
                     Text("vs")
                     Text(match.away.name)

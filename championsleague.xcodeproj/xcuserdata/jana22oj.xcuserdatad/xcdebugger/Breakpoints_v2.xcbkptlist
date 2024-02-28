@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "53035E85-ED25-4253-9286-362D47D1D5A5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "449FF2FC-BBE3-4DDA-BAEC-26B4E67317B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View/MatchCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

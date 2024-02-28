@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchCardView: View {
-    let match: ChampionsLeagueData.MatchData.Match
+    let match: ChampionsLeagueData.MatchData.Match?
     
     var body: some View {
         ZStack {
@@ -17,11 +17,11 @@ struct MatchCardView: View {
                 .foregroundStyle(.green)
             
             HStack {
-                Text(match.home.name)
+                Text(match?.home.name ?? "City")
                 
-                Text(match.status.scoreStr ?? "-")
-                
-                Text(match.away.name)
+                Text(match?.status.scoreStr ?? "-")
+                 
+                Text(match?.away.name ?? "Barca")
             }
             .fontWeight(.semibold)
             .foregroundStyle(.white)
@@ -29,7 +29,21 @@ struct MatchCardView: View {
     }
 }
 
-//#Preview {
+#Preview {
     
-   // MatchCardView(match: nil)
-//}
+//    let championsLeagueDetailsData = ChampionsLeagueData.LeagueDetails(id: 1, type: "Test Type", name: "Test name", selectedSeason: "2024/2025", latestSeason: "2024/2025", shortName: "Test short name", country: "Sweden")
+//    
+//    let championsLeagueData = ChampionsLeagueData(details: championsLeagueDetailsData, table: <#T##[ChampionsLeagueData.TableData]#>, matches: <#T##ChampionsLeagueData.MatchData#>)
+//    
+//
+//    let championsLeagueTableDataContent = ChampionsLeagueData.TableData.TableDataContent(composite: <#T##Bool#>, ccode: <#T##String#>, leagueId: <#T##Int#>, pageUrl: <#T##String#>, leagueName: <#T##String#>, legend: <#T##[ChampionsLeagueData.TableData.TableDataContent.Legend]#>, tables: <#T##[ChampionsLeagueData.TableData.TableDataContent.GroupTable]#>)
+//    
+//    
+//    
+//    
+//    let championsLeagueTableData = ChampionsLeagueData.TableData(data: championsLeagueTableDataContent)
+//    
+//    
+//    let chmampionsLeagueMatchData = ChampionsLeagueData.MatchData(firstUnplayedMatch: <#T##ChampionsLeagueData.MatchData.FirstUnplayedMatch#>, allMatches: <#T##[ChampionsLeagueData.MatchData.Match]#>)
+    MatchCardView(match: nil)
+}

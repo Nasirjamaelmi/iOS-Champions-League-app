@@ -30,6 +30,7 @@ struct tabScreen: View {
                 }
         }
     }
+    
 }
 
 
@@ -37,6 +38,8 @@ struct homeScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let colorDark = UIColor(red: 0x39, green:0x47, blue: 0x38)
     let footballModel = FootballModel()
+    
+    @State var isLoading = false
     
     var upcomingMatches: [ChampionsLeagueData.MatchData.Match] {
             footballModel.footballData?.matches.allMatches.filter { !$0.status.started } ?? []
@@ -48,7 +51,8 @@ struct homeScreen: View {
                 VStack {
                     // Use a ZStack to overlay the loading indicator on top of the current view
                     ZStack {
-                        if footballModel.isLoading {
+                        // if footballModel.isLoading
+                        if isLoading {
                             Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
@@ -70,7 +74,9 @@ struct homeScreen: View {
                     .navigationTitle("Home")
                     .onAppear {
                         Task {
+                            isLoading = true
                             await footballModel.loadfeed()
+                            isLoading = false
                         }
                     }
                 }
@@ -101,7 +107,7 @@ struct homeScreen: View {
         
         // Extracted view for upcoming matches to clean up the body
         var upcomingMatchesSection: some View {
-            VStack(spacing: 20) {
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
                 Text("Upcoming Matches").font(.headline).padding(.leading)
                 ForEach(Array(upcomingMatches.prefix(6)), id: \.id) { match in
                     UpcomingMatchView(match: match)
