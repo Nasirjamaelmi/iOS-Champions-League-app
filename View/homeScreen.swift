@@ -52,8 +52,10 @@ struct homeScreen: View {
                     // Use a ZStack to overlay the loading indicator on top of the current view
                     ZStack {
                         // if footballModel.isLoading
+                        Color(colorGreen)
+                                            .edgesIgnoringSafeArea(.all)
                         if isLoading {
-                            Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+                            Color.black.opacity(1.0).edgesIgnoringSafeArea(.all)
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 .scaleEffect(1.5)
@@ -67,10 +69,10 @@ struct homeScreen: View {
                                 // Upcoming Matches Section
                                 upcomingMatchesSection
                             }
-                            .background(Color(colorGreen).edgesIgnoringSafeArea(.all))
-                            .foregroundColor(Color(colorDark))
+                    
+                          
                         }
-                    }
+                    } 
                     .navigationTitle("Home")
                     .onAppear {
                         Task {
@@ -80,6 +82,7 @@ struct homeScreen: View {
                         }
                     }
                 }
+                
             }
         }
     
