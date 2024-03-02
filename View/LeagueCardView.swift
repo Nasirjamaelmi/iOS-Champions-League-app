@@ -15,9 +15,7 @@ struct LeaugeCardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 400, height: 180)
                 .foregroundStyle(.green)
-            
             VStack {
                 HStack{
                     if let matchDate = match.status.utcTime.toDate() {
@@ -29,7 +27,6 @@ struct LeaugeCardView: View {
                     }
                     Spacer()
                 }
-                
                 VStack{
                     HStack{
                         Text(match.home.name)

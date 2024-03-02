@@ -179,7 +179,7 @@ struct homeScreen: View {
 
 struct StandingsScreen: View {
     var body: some View {
-        Text("Standings Screen")
+       StagesScreen()
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             .padding()
             .navigationTitle("Standings")

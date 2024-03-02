@@ -31,7 +31,7 @@ struct MatchCardView: View {
                    // Text(match.status.scoreStr ?? "-")
                     //Text(match.away.name)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity)
+          
                 
                 //logo(for: match.away.id)
 

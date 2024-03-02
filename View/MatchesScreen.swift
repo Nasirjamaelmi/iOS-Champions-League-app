@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MatchesScreen: View {
+    let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let footballModel = FootballModel()
     var Matches: [ChampionsLeagueData.MatchData.Match] {
         footballModel.footballData?.matches.allMatches.filter { !$0.status.started } ?? []
@@ -16,8 +17,9 @@ struct MatchesScreen: View {
     @State var MatchesisLoading = false
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+            
             if MatchesisLoading {
-                Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(1.0).edgesIgnoringSafeArea(.all)
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
                     .scaleEffect(1.5)
@@ -25,22 +27,26 @@ struct MatchesScreen: View {
                 VStack {
                     // Live Matches Section
                     
-                    ScrollView{
+                    ScrollView(showsIndicators: false, content: {
                         MatchesSection
-                    }
+                    })
+                  
                     
-                 
-
+                    
                     Spacer()
-
+                    
                     // Upcoming Matches Section
-                
+                    
                 }
-                .padding(50)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(colorGreen))
+                
+                
                 
             }
             
         }
+        
         .onAppear {
             Task {
                 MatchesisLoading = true
@@ -56,9 +62,9 @@ struct MatchesScreen: View {
         VStack(alignment: .center, spacing: 20) {
             Text("Matches").font(.headline).padding(.leading)
             ForEach(Matches, id: \.id) { match in
-                       LeaugeCardView(match: match)
-                      
-                           .padding([.leading, .trailing])
+                LeaugeCardView(match: match)
+                    .frame(width: UIScreen.main.bounds.width * 0.8)
+                    .padding([.leading, .trailing])
             }
         }
     }
@@ -67,6 +73,6 @@ struct MatchesScreen: View {
 
 
 #Preview {
-   
+    
     MatchesScreen()
 }
