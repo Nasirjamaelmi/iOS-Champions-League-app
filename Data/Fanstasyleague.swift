@@ -8,31 +8,31 @@
 import Foundation
 
 struct FanstasyleagueData: Decodable {
-    let topLists: [TopList]
-    let leagueName: String
+    let TopLists: [TopList]
+   
 }
 
 
 struct TopList: Decodable {
-    let statName: String
-    let title: String
-    let subtitle: String
-    let localizedTitleId: String
-    let localizedSubtitleId: String
-    let statList: [Players]
+    let StatName: String
+    let Title: String
+    let Subtitle: String
+    let LocalizedTitleId: String
+    let LocalizedSubtitleId: String
+    let StatList: [Players]
 }
 
 struct Players: Decodable {
-    let participantName: String
-    let participantId: Int
-    let teamId: Int
-    let teamColor: String
-    let statValue: Double
-    let subStatValue: Double
-    let minutesPlayed: Int
-    let matchesPlayed: Int
-    let statValueCount: Int
-    let rank: Int
-    let participantCountryCode: String
-    let teamName: String
+    let ParticipantName: String
+    let ParticiantId: Int
+    let TeamId: Int
+    let TeamColor: String
+    let StatValue: Double
+    let SubStatValue: Double
+    let MinutesPlayed: Int
+    let MatchesPlayed: Int
+    let StatValueCount: Int
+    let Rank: Int
+    let ParticipantCountryCode: String
+    let TeamName: String
 }

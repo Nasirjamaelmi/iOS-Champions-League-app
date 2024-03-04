@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var champ = FootballModel()
+    @State var fan =  FantasyModel()
+    
     var body: some View {
         VStack(alignment: .leading) {
              tabScreen() 
@@ -16,8 +18,10 @@ struct ContentView: View {
         
         .task {
             await champ.loadfeed()
+            await fan.loadfantasy()
         }
     }
+    
 }
 
 #Preview {

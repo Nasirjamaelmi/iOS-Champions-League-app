@@ -17,6 +17,8 @@
 		0F43122B2B8DD16F00DBAA03 /* colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */; };
 		B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */; };
 		B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */; };
+		B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */; };
+		B1EE4C3B2B8F835A005386B0 /* fantasyleaguelogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */; };
 		B1EEA5342B8376E200299C5F /* championsleagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA5332B8376E200299C5F /* championsleagueApp.swift */; };
 		B1EEA5362B8376E200299C5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA5352B8376E200299C5F /* ContentView.swift */; };
 		B1EEA5382B8376E400299C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EEA5372B8376E400299C5F /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFromHex.swift; sourceTree = "<group>"; };
 		B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleague.swift; sourceTree = "<group>"; };
 		B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleaguedata.swift; sourceTree = "<group>"; };
+		B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaderboard.swift; sourceTree = "<group>"; };
+		B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaguelogic.swift; sourceTree = "<group>"; };
 		B1EEA5302B8376E200299C5F /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = championsleague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EEA5332B8376E200299C5F /* championsleagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = championsleagueApp.swift; sourceTree = "<group>"; };
 		B1EEA5352B8376E200299C5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				0F3CE93E2B8FB06B00BD352D /* MatchesScreen.swift */,
 				08975CAE2B91FC3F00581F90 /* StagesScreen.swift */,
 				081DEEEC2B93635D0052EAA6 /* GroupStageView.swift */,
+				B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				B1EEA5632B83781100299C5F /* championsgetdata.swift */,
 				0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */,
 				B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */,
+				B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			files = (
 				B1EEA5362B8376E200299C5F /* ContentView.swift in Sources */,
 				B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */,
+				B1EE4C3B2B8F835A005386B0 /* fantasyleaguelogic.swift in Sources */,
 				08E81F8E2B8D181800FBC24B /* UpcomingMatchView.swift in Sources */,
 				0F3CE93B2B8FB00900BD352D /* LeagueCardView.swift in Sources */,
 				0F4312292B8CA60B00DBAA03 /* homeScreen.swift in Sources */,
@@ -328,6 +335,7 @@
 				08975CAF2B91FC3F00581F90 /* StagesScreen.swift in Sources */,
 				0F43122B2B8DD16F00DBAA03 /* colorFromHex.swift in Sources */,
 				0F3B9FFC2B8CCD7400EE0124 /* MatchCardView.swift in Sources */,
+				B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */,
 				B1EEA5622B83775900299C5F /* championsleague.swift in Sources */,
 				B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */,
 				0F3CE93F2B8FB06B00BD352D /* MatchesScreen.swift in Sources */,
