@@ -10,8 +10,8 @@ import SwiftUI
 struct MatchesScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let footballModel = FootballModel()
-    var Matches: [ChampionsLeagueData.MatchData.Match] {
-        footballModel.footballData?.matches.allMatches.filter { !$0.status.started } ?? []
+    var Matches: [ChampionsLeagueData.MatchData.Match] {    
+        footballModel.footballData?.matches.allMatches.filter { $0.status.finished || !$0.status.started  } ?? []
     }
     
     @State var MatchesisLoading = false

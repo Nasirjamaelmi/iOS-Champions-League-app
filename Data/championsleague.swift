@@ -7,7 +7,7 @@
 
     import Foundation
 
-    struct ChampionsLeagueData: Decodable {
+    struct ChampionsLeagueData: Decodable  {
         let details: LeagueDetails
         let table: [TableData]
         let matches: MatchData

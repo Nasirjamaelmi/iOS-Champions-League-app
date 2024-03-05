@@ -13,6 +13,7 @@ import Observation
 class FootballModel{
     
     var footballData: ChampionsLeagueData?
+    var groupData: [Int:ChampionsLeagueData.TableData.TableDataContent.GroupTable] = [:]
     
     var isLoading = false
     
@@ -27,8 +28,9 @@ class FootballModel{
         
         do{
             let (data,_) = try await URLSession.shared.data(from: url)
-            print(data)
+            //print(data)
             let football = try JSONDecoder().decode(ChampionsLeagueData.self, from:data)
+            separateGroupData(football)
             footballData = football
           
             }
@@ -37,6 +39,21 @@ class FootballModel{
         }
        isLoading = false
         
+    }
+    
+    private func separateGroupData(_ data: ChampionsLeagueData) {
+        var groups: [Int:ChampionsLeagueData.TableData.TableDataContent.GroupTable] = [:]
+        
+        guard let tables = data.table.first?.data.tables else {
+            print("couldn't extract tables")
+            return
+        }
+        
+        for (index, group) in tables.enumerated() {
+            groups[index] = group
+        }
+                
+        groupData = groups
     }
     
 }

@@ -8,11 +8,41 @@
 import SwiftUI
 
 struct GroupStageView: View {
-    let footballModel = FootballModel()
+    let model = FootballModel()
     var body: some View {
-        Text("Champions Leauge")
+       
+            VStack
+            {
+                ScrollView{
+                    ForEach(model.groupData.sorted(by: {$0.key < $1.key}), id: \.key) { key, value in
+                        VStack {
+                            GroupStageCardView(groupName: value.leagueName, teams: value.table.all)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(12)
+                        .foregroundColor(.white)
+                    }
+            }
+        }
+     
+            .onAppear{
+                Task{
+                    await model.loadfeed()
+                }
+            }
+        
+        
     }
 }
+
+extension GroupStageView {
+    private func displayGroupData() {
+        
+    }
+}
+
+
 
 #Preview {
     GroupStageView()

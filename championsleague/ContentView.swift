@@ -18,7 +18,7 @@ struct ContentView: View {
         
         .task {
             await champ.loadfeed()
-            await fan.loadfantasy()
+            //await fan.loadfantasy()
         }
     }
     

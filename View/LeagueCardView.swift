@@ -20,6 +20,7 @@ struct LeaugeCardView: View {
                 HStack{
                     if let matchDate = match.status.utcTime.toDate() {
                         Text(matchDate, formatter: matchDateFormatter)
+                        Text(match.roundName)
                             .fontWeight(.semibold)
                     } else {
                         Text("TBA")

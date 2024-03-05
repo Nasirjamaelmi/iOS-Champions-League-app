@@ -15,7 +15,57 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
-            endingLineNumber = "50">
+            endingLineNumber = "50"
+            landmarkName = "MatchCardView"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA2F8C65-551F-4476-A7A3-109BE33246A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View/MatchesScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MatchesScreen"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "CA2F8C65-551F-4476-A7A3-109BE33246A8 - a7b10d44bc1cc9b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.MatchesScreen.init() -&gt; championsleague.MatchesScreen"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/View/MatchesScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "CA2F8C65-551F-4476-A7A3-109BE33246A8 - 475df51738d9742c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.MatchesScreen.init(MatchesisLoading: Swift.Bool) -&gt; championsleague.MatchesScreen"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/View/MatchesScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
