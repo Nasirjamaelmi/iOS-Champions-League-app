@@ -10,6 +10,7 @@ import Foundation
 
 
 struct tabScreen: View {
+    let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     var body: some View {
         TabView{
             homeScreen()
@@ -29,6 +30,7 @@ struct tabScreen: View {
                     Label("Stats", systemImage: "list.clipboard")
                 }
         }
+        .background(Color(colorGreen))
     }
     
 }
@@ -125,10 +127,11 @@ struct homeScreen: View {
 
 
 struct StandingsScreen: View {
+    let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     var body: some View {
        GroupStageView()
+            .background(Color(colorGreen))
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .padding()
             .navigationTitle("Standings")
     }
 }
