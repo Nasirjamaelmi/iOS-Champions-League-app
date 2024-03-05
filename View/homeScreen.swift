@@ -187,13 +187,35 @@ struct StandingsScreen: View {
 }
 
 struct StatsScreen: View {
+    @State var fantasyModel = FantasyModel()
+    @State private var players: [PlayerFantasyStats] = []
+
     var body: some View {
-        Text("Stats Screen")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .padding()
-            .navigationTitle("Stats Screen")
+        NavigationView {
+            if players.isEmpty {
+                Text("Loading...")
+                    .onAppear {
+                        loadFantasyData()
+                    }
+            } else {
+                LeaderboardView(players: players)
+                    .navigationTitle("Stats Screen")
+            }
+        }
+    }
+    
+    func loadFantasyData() {
+        // Assume loadAllData() now properly updates a fantasyData property
+        // and getLeaderboard() is available to use.
+        Task {
+            await fantasyModel.loadAllData()
+            // Now assuming fantasyModel can give us PlayerFantasyStats array
+            // This could be a direct property or a method to transform fantasyData
+            players = FantasyStatsProcessor.getLeaderboard() // Adjust based on your actual data handling
+        }
     }
 }
+
 
 
 #Preview {
