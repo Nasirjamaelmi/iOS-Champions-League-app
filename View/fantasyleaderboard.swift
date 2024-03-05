@@ -24,9 +24,12 @@ struct LeaderboardView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                .padding(.vertical, 5) // Add some padding for better tap targets
+                .padding(.vertical, 5)
             }
             .navigationTitle("Fantasy League Leaderboard")
+        }
+        .onAppear{
+            debugPrint(players)
         }
     }
 }

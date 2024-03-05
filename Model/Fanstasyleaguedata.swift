@@ -204,12 +204,13 @@ class FantasyModel{
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 // Log the raw data for debugging
-                print(String(data: data, encoding: .utf8) ?? "No data to print")
+                //print(String(data: data, encoding: .utf8) ?? "No data to print")
                 let fantasy = try JSONDecoder().decode(FanstasyleagueData.self, from: data)
                 fantasyData.append(fantasy)
-                print("Data loaded for \(statType.rawValue)")
+                FantasyStatsProcessor.processStats(from: fantasy.TopLists)
+               // print("Data loaded for \(statType.rawValue)")
             } catch {
-                print("Failed to load data for \(statType.rawValue): \(error)")
+               // print("Failed to load data for \(statType.rawValue): \(error)")
             }
         }
         
