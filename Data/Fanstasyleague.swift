@@ -43,7 +43,7 @@ enum StatType: String, Decodable {
         case goals = "goals",
              assists = "goal_assist",
              yellowCards = "yellow_card",
-             redCards = "red_cards",
+             redCards = "red_card",
              cleanSheets = "clean_sheet"
     
     

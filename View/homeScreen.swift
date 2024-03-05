@@ -120,60 +120,7 @@ struct homeScreen: View {
         }
     }
     
-    /*
-    var body: some View {
-           NavigationView {
-               VStack {
-                   if footballModel.isLoading {
-                       // Show loading indicator while data is being fetched
-                       ProgressView()
-                           .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                           .scaleEffect(1.5)
-                   } else {
-                       // Attempt to filter live matches
-                       let liveMatches = footballModel.footballData?.matches.allMatches.filter { $0.status.started && !$0.status.finished } ?? []
-                       
-                       if liveMatches.isEmpty {
-                           // Show "No live matches" if there are no live matches
-                           Text("No live matches")
-                               .font(.title)
-                               .foregroundColor(.white)
-                       } else {
-                           // Display live matches if there are any
-                           ScrollView(.horizontal, showsIndicators: false) {
-                               HStack(spacing: 30) {
-                                   ForEach(liveMatches) { match in
-                                       MatchCardView(match: match)
-                                   }
-                               }
-                               .padding(50)
-                               .background(Color(colorDark))
-                           }
-                       }
-                   }
-                   Spacer()
-                   VStack(spacing: 20) {
-                       Text("Upcoming Matches")
-                       ForEach(Array(upcomingMatches.prefix(6)), id: \.id) { match in
-                           UpcomingMatchView(match: match)
-                       }
-                   }
-
-
-
-               }
-               .navigationTitle("Home")
-               .background(Color(colorGreen))
-               .foregroundColor(.white)
-               .onAppear {
-                   Task {
-                       await footballModel.loadfeed()
-                   }
-               }
-           }
-       }
-   }
-     */
+   
 
 
 
@@ -188,8 +135,8 @@ struct StandingsScreen: View {
 
 struct StatsScreen: View {
     @State var fantasyModel = FantasyModel()
-    @State private var players: [PlayerFantasyStats] = []
-
+    @State var players: [PlayerFantasyStats] = []
+    
     var body: some View {
         NavigationView {
             if players.isEmpty {
@@ -197,21 +144,21 @@ struct StatsScreen: View {
                     .onAppear {
                         loadFantasyData()
                     }
-            } else {
+            } else if players.count > 0 {
                 LeaderboardView(players: players)
                     .navigationTitle("Stats Screen")
+            } else {
+                Text("No data available")
             }
         }
+
     }
     
     func loadFantasyData() {
-        // Assume loadAllData() now properly updates a fantasyData property
-        // and getLeaderboard() is available to use.
         Task {
             await fantasyModel.loadAllData()
-            // Now assuming fantasyModel can give us PlayerFantasyStats array
-            // This could be a direct property or a method to transform fantasyData
-            players = FantasyStatsProcessor.getLeaderboard() // Adjust based on your actual data handling
+            self.players = FantasyStatsProcessor.getLeaderboard()
+
         }
     }
 }

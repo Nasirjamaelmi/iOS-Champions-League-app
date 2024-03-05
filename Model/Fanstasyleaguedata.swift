@@ -183,7 +183,7 @@ class FantasyModel{
     var fantasyData: [FanstasyleagueData] = []
     var isLoading = false
     
-    // Enum to manage different API endpoints
+ 
     enum StatType: String {
         case goals = "goals"
         case assists = "goal_assist"
@@ -196,16 +196,18 @@ class FantasyModel{
     func loadData(forStatTypes statTypes: [StatType]) async {
         isLoading = true
         
-        // Iterate through the stat types and load data for each
         for statType in statTypes {
             guard let url = URL(string: "https://data.fotmob.com/stats/42/season/20961/\(statType.rawValue).json") else {
-                continue // Skip if the URL is not valid
+                continue
             }
             
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
+                // Log the raw data for debugging
+                print(String(data: data, encoding: .utf8) ?? "No data to print")
                 let fantasy = try JSONDecoder().decode(FanstasyleagueData.self, from: data)
                 fantasyData.append(fantasy)
+                print("Data loaded for \(statType.rawValue)")
             } catch {
                 print("Failed to load data for \(statType.rawValue): \(error)")
             }
@@ -214,7 +216,7 @@ class FantasyModel{
         isLoading = false
     }
     
-    // Convenience method to load all stat types
+  
     func loadAllData() async {
         await loadData(forStatTypes: [.goals, .assists, .cleanSheets, .yellowCards, .redCards])
     }
