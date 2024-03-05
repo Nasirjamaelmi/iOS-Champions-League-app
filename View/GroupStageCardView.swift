@@ -81,9 +81,6 @@ struct StatisticView: View {
                 .fontWeight(.semibold)
         }
         .frame(minWidth: 50,alignment: .center)
-        
-        
-        
     }
 }
 /*  HStack{

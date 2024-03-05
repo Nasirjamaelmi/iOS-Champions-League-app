@@ -13,23 +13,24 @@ struct GroupStageView: View {
     var body: some View {
         
         VStack
-        {        HStack{
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 10, height: 10)
-            Text("Qualified")
-            Spacer()
-            Circle()
-                .fill(Color.orange)
-                .frame(width: 10, height: 10)
-            Text("Europa Leauge")
-            Spacer()
-            Circle()
-                .fill(Color.red)
-                .frame(width: 10, height: 10)
-            Text("Disqualifed")
-        }
-        .font(.system(size: 16))
+        {
+            HStack{
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 10, height: 10)
+                Text("Qualified")
+                Spacer()
+                Circle()
+                    .fill(Color.orange)
+                    .frame(width: 10, height: 10)
+                Text("Europa Leauge")
+                Spacer()
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 10, height: 10)
+                Text("Disqualifed")
+            }
+            .font(.system(size: 16))
             ScrollView(showsIndicators:false, content:{
                 ForEach(model.groupData.sorted(by: {$0.key < $1.key}), id: \.key) { key, value in
                     VStack {
@@ -41,16 +42,21 @@ struct GroupStageView: View {
                     .cornerRadius(12)
                     .foregroundColor(.white)
                 }
-            })
+            })  .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(colorGreen))
             
         }
         
         
-            .onAppear{
-                Task{
-                    await model.loadfeed()
-                }
+        
+        .onAppear{
+          
+            Task{
+                await model.loadfeed()
+               
             }
+           
+        }
         
         
     }
