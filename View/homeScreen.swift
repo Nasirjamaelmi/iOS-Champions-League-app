@@ -17,6 +17,10 @@ struct tabScreen: View {
                 .tabItem {
                     Label("Home", systemImage: "house.circle.fill")
                 }
+            RootView()
+                .tabItem{
+                    Label("Profile" , systemImage:"person.crop.circle.fill")
+                }
             MatchesScreen()
                 .tabItem {
                     Label("Matches" ,systemImage: "figure.soccer")

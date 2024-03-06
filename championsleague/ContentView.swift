@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @State var champ = FootballModel()
@@ -13,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-             tabScreen() 
+             tabScreen()
         }
         
         .task {
