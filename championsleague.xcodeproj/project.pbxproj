@@ -45,12 +45,12 @@
 		0F7EA7712B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
 		0F7EA7722B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
 		0F7EA7732B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
-		0F7EA7752B9B43E80068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7742B9B43E80068E095 /* GoogleService-Info.plist */; };
-		0F7EA7762B9B43E80068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7742B9B43E80068E095 /* GoogleService-Info.plist */; };
-		0F7EA7772B9B43E80068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7742B9B43E80068E095 /* GoogleService-Info.plist */; };
-		0F7EA7792B9B43F50068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7782B9B43F50068E095 /* credentials.plist */; };
-		0F7EA77A2B9B43F50068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7782B9B43F50068E095 /* credentials.plist */; };
-		0F7EA77B2B9B43F50068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7782B9B43F50068E095 /* credentials.plist */; };
+		0F9AFE992B9B453100254609 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE982B9B453100254609 /* credentials.plist */; };
+		0F9AFE9A2B9B453100254609 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE982B9B453100254609 /* credentials.plist */; };
+		0F9AFE9B2B9B453100254609 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE982B9B453100254609 /* credentials.plist */; };
+		0F9AFE9D2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
+		0F9AFE9E2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
+		0F9AFE9F2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
 		B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */; };
 		B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */; };
 		B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */; };
@@ -102,8 +102,8 @@
 		0F7EA76A2B9B10F60068E095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0F7EA76C2B9B18400068E095 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
-		0F7EA7742B9B43E80068E095 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0F7EA7782B9B43F50068E095 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		0F9AFE982B9B453100254609 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleague.swift; sourceTree = "<group>"; };
 		B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleaguedata.swift; sourceTree = "<group>"; };
 		B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaderboard.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		0F53FA1D2B98609D001834B1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				0F7EA7782B9B43F50068E095 /* credentials.plist */,
-				0F7EA7742B9B43E80068E095 /* GoogleService-Info.plist */,
+				0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */,
+				0F9AFE982B9B453100254609 /* credentials.plist */,
 				0F7EA76B2B9B181A0068E095 /* Utilities */,
 				0F53FA2E2B9864F3001834B1 /* AuthenticationView.swift */,
 				0F53FA322B986650001834B1 /* SignInEmailView.swift */,
@@ -398,9 +398,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EEA53B2B8376E400299C5F /* Preview Assets.xcassets in Resources */,
-				0F7EA7792B9B43F50068E095 /* credentials.plist in Resources */,
+				0F9AFE9D2B9B453B00254609 /* GoogleService-Info.plist in Resources */,
+				0F9AFE992B9B453100254609 /* credentials.plist in Resources */,
 				B1EEA5382B8376E400299C5F /* Assets.xcassets in Resources */,
-				0F7EA7752B9B43E80068E095 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +408,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F7EA7762B9B43E80068E095 /* GoogleService-Info.plist in Resources */,
-				0F7EA77A2B9B43F50068E095 /* credentials.plist in Resources */,
+				0F9AFE9A2B9B453100254609 /* credentials.plist in Resources */,
+				0F9AFE9E2B9B453B00254609 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F7EA7772B9B43E80068E095 /* GoogleService-Info.plist in Resources */,
-				0F7EA77B2B9B43F50068E095 /* credentials.plist in Resources */,
+				0F9AFE9B2B9B453100254609 /* credentials.plist in Resources */,
+				0F9AFE9F2B9B453B00254609 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
