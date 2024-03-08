@@ -54,7 +54,6 @@
 		B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */; };
 		B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */; };
 		B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */; };
-		B1EE4C3B2B8F835A005386B0 /* fantasyleaguelogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */; };
 		B1EEA5342B8376E200299C5F /* championsleagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA5332B8376E200299C5F /* championsleagueApp.swift */; };
 		B1EEA5362B8376E200299C5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA5352B8376E200299C5F /* ContentView.swift */; };
 		B1EEA5382B8376E400299C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EEA5372B8376E400299C5F /* Assets.xcassets */; };
@@ -107,7 +106,6 @@
 		B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleague.swift; sourceTree = "<group>"; };
 		B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleaguedata.swift; sourceTree = "<group>"; };
 		B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaderboard.swift; sourceTree = "<group>"; };
-		B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaguelogic.swift; sourceTree = "<group>"; };
 		B1EEA5302B8376E200299C5F /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = championsleague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EEA5332B8376E200299C5F /* championsleagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = championsleagueApp.swift; sourceTree = "<group>"; };
 		B1EEA5352B8376E200299C5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 				B1EEA5632B83781100299C5F /* championsgetdata.swift */,
 				0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */,
 				B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */,
-				B1EE4C3A2B8F835A005386B0 /* fantasyleaguelogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 				B1EEA5362B8376E200299C5F /* ContentView.swift in Sources */,
 				0F53FA432B987DE2001834B1 /* SettingsView.swift in Sources */,
 				B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */,
-				B1EE4C3B2B8F835A005386B0 /* fantasyleaguelogic.swift in Sources */,
 				0F7EA76D2B9B18400068E095 /* Utilites.swift in Sources */,
 				08E81F8E2B8D181800FBC24B /* UpcomingMatchView.swift in Sources */,
 				0F53FA332B986650001834B1 /* SignInEmailView.swift in Sources */,
