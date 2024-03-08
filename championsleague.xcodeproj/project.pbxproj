@@ -37,9 +37,20 @@
 		0F53FA432B987DE2001834B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53FA422B987DE2001834B1 /* SettingsView.swift */; };
 		0F53FA442B987DE2001834B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53FA422B987DE2001834B1 /* SettingsView.swift */; };
 		0F53FA452B987DE2001834B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53FA422B987DE2001834B1 /* SettingsView.swift */; };
-		0F64527B2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F64527A2B98B60D00AB7D7D /* GoogleService-Info.plist */; };
-		0F64527C2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F64527A2B98B60D00AB7D7D /* GoogleService-Info.plist */; };
-		0F64527D2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F64527A2B98B60D00AB7D7D /* GoogleService-Info.plist */; };
+		0F7EA75E2B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA75D2B9B0A3D0068E095 /* GoogleService-Info.plist */; };
+		0F7EA75F2B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA75D2B9B0A3D0068E095 /* GoogleService-Info.plist */; };
+		0F7EA7602B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA75D2B9B0A3D0068E095 /* GoogleService-Info.plist */; };
+		0F7EA7632B9B0B630068E095 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0F7EA7622B9B0B630068E095 /* GoogleSignIn */; };
+		0F7EA7652B9B0B630068E095 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F7EA7642B9B0B630068E095 /* GoogleSignInSwift */; };
+		0F7EA7672B9B0BBF0068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7662B9B0BBF0068E095 /* credentials.plist */; };
+		0F7EA7682B9B0BBF0068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7662B9B0BBF0068E095 /* credentials.plist */; };
+		0F7EA7692B9B0BBF0068E095 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F7EA7662B9B0BBF0068E095 /* credentials.plist */; };
+		0F7EA76D2B9B18400068E095 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA76C2B9B18400068E095 /* Utilites.swift */; };
+		0F7EA76E2B9B18400068E095 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA76C2B9B18400068E095 /* Utilites.swift */; };
+		0F7EA76F2B9B18400068E095 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA76C2B9B18400068E095 /* Utilites.swift */; };
+		0F7EA7712B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
+		0F7EA7722B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
+		0F7EA7732B9B34530068E095 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */; };
 		B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */; };
 		B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */; };
 		B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */; };
@@ -88,7 +99,11 @@
 		0F53FA3A2B987542001834B1 /* profileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileView.swift; sourceTree = "<group>"; };
 		0F53FA3E2B987C37001834B1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0F53FA422B987DE2001834B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		0F64527A2B98B60D00AB7D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F7EA75D2B9B0A3D0068E095 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F7EA7662B9B0BBF0068E095 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		0F7EA76A2B9B10F60068E095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0F7EA76C2B9B18400068E095 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleague.swift; sourceTree = "<group>"; };
 		B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleaguedata.swift; sourceTree = "<group>"; };
 		B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaderboard.swift; sourceTree = "<group>"; };
@@ -112,7 +127,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7EA7652B9B0B630068E095 /* GoogleSignInSwift in Frameworks */,
 				0F53FA272B9861F9001834B1 /* FirebaseAnalyticsSwift in Frameworks */,
+				0F7EA7632B9B0B630068E095 /* GoogleSignIn in Frameworks */,
 				0F53FA292B98638A001834B1 /* FirebaseAuth in Frameworks */,
 				0F53FA252B9861F5001834B1 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -155,13 +172,16 @@
 		0F53FA1D2B98609D001834B1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				0F64527A2B98B60D00AB7D7D /* GoogleService-Info.plist */,
+				0F7EA76B2B9B181A0068E095 /* Utilities */,
+				0F7EA7662B9B0BBF0068E095 /* credentials.plist */,
+				0F7EA75D2B9B0A3D0068E095 /* GoogleService-Info.plist */,
 				0F53FA2E2B9864F3001834B1 /* AuthenticationView.swift */,
 				0F53FA322B986650001834B1 /* SignInEmailView.swift */,
 				0F53FA362B986B73001834B1 /* AuthenticationManager.swift */,
 				0F53FA3A2B987542001834B1 /* profileView.swift */,
 				0F53FA3E2B987C37001834B1 /* RootView.swift */,
 				0F53FA422B987DE2001834B1 /* SettingsView.swift */,
+				0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -171,6 +191,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0F7EA76B2B9B181A0068E095 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0F7EA76C2B9B18400068E095 /* Utilites.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B1EEA5272B8376E200299C5F = {
@@ -200,6 +228,7 @@
 		B1EEA5322B8376E200299C5F /* championsleague */ = {
 			isa = PBXGroup;
 			children = (
+				0F7EA76A2B9B10F60068E095 /* Info.plist */,
 				B1EEA5332B8376E200299C5F /* championsleagueApp.swift */,
 				B1EEA5352B8376E200299C5F /* ContentView.swift */,
 				B1EEA5372B8376E400299C5F /* Assets.xcassets */,
@@ -273,6 +302,8 @@
 				0F53FA242B9861F5001834B1 /* FirebaseAnalytics */,
 				0F53FA262B9861F9001834B1 /* FirebaseAnalyticsSwift */,
 				0F53FA282B98638A001834B1 /* FirebaseAuth */,
+				0F7EA7622B9B0B630068E095 /* GoogleSignIn */,
+				0F7EA7642B9B0B630068E095 /* GoogleSignInSwift */,
 			);
 			productName = championsleague;
 			productReference = B1EEA5302B8376E200299C5F /* championsleague.app */;
@@ -348,6 +379,7 @@
 			mainGroup = B1EEA5272B8376E200299C5F;
 			packageReferences = (
 				0F53FA222B9861BA001834B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0F7EA7612B9B0B010068E095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = B1EEA5312B8376E200299C5F /* Products */;
 			projectDirPath = "";
@@ -366,8 +398,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EEA53B2B8376E400299C5F /* Preview Assets.xcassets in Resources */,
+				0F7EA7672B9B0BBF0068E095 /* credentials.plist in Resources */,
 				B1EEA5382B8376E400299C5F /* Assets.xcassets in Resources */,
-				0F64527B2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */,
+				0F7EA75E2B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +408,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F64527C2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */,
+				0F7EA75F2B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */,
+				0F7EA7682B9B0BBF0068E095 /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F64527D2B98B60D00AB7D7D /* GoogleService-Info.plist in Resources */,
+				0F7EA7602B9B0A3D0068E095 /* GoogleService-Info.plist in Resources */,
+				0F7EA7692B9B0BBF0068E095 /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +433,7 @@
 				0F53FA432B987DE2001834B1 /* SettingsView.swift in Sources */,
 				B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */,
 				B1EE4C3B2B8F835A005386B0 /* fantasyleaguelogic.swift in Sources */,
+				0F7EA76D2B9B18400068E095 /* Utilites.swift in Sources */,
 				08E81F8E2B8D181800FBC24B /* UpcomingMatchView.swift in Sources */,
 				0F53FA332B986650001834B1 /* SignInEmailView.swift in Sources */,
 				0F3CE93B2B8FB00900BD352D /* LeagueCardView.swift in Sources */,
@@ -413,6 +449,7 @@
 				0F53FA3B2B987542001834B1 /* profileView.swift in Sources */,
 				0F53FA2F2B9864F3001834B1 /* AuthenticationView.swift in Sources */,
 				0F12985D2B95D25300FBCF02 /* GroupStageCardView.swift in Sources */,
+				0F7EA7712B9B34530068E095 /* SignInGoogleHelper.swift in Sources */,
 				B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */,
 				B1EEA5622B83775900299C5F /* championsleague.swift in Sources */,
 				B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */,
@@ -428,6 +465,8 @@
 				B1EEA5452B8376E400299C5F /* championsleagueTests.swift in Sources */,
 				0F53FA382B986B73001834B1 /* AuthenticationManager.swift in Sources */,
 				0F53FA402B987C37001834B1 /* RootView.swift in Sources */,
+				0F7EA7722B9B34530068E095 /* SignInGoogleHelper.swift in Sources */,
+				0F7EA76E2B9B18400068E095 /* Utilites.swift in Sources */,
 				0F53FA3C2B987542001834B1 /* profileView.swift in Sources */,
 				0F53FA342B986650001834B1 /* SignInEmailView.swift in Sources */,
 				0F53FA302B9864F3001834B1 /* AuthenticationView.swift in Sources */,
@@ -438,7 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7EA7732B9B34530068E095 /* SignInGoogleHelper.swift in Sources */,
 				B1EEA5512B8376E400299C5F /* championsleagueUITestsLaunchTests.swift in Sources */,
+				0F7EA76F2B9B18400068E095 /* Utilites.swift in Sources */,
 				0F53FA452B987DE2001834B1 /* SettingsView.swift in Sources */,
 				B1EEA54F2B8376E400299C5F /* championsleagueUITests.swift in Sources */,
 				0F53FA3D2B987542001834B1 /* profileView.swift in Sources */,
@@ -594,6 +635,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"championsleague/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = championsleague/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -622,6 +664,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"championsleague/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = championsleague/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -762,6 +805,14 @@
 				minimumVersion = 10.22.0;
 			};
 		};
+		0F7EA7612B9B0B010068E095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -779,6 +830,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0F53FA222B9861BA001834B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		0F7EA7622B9B0B630068E095 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F7EA7612B9B0B010068E095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		0F7EA7642B9B0B630068E095 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F7EA7612B9B0B010068E095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

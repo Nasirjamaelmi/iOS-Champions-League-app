@@ -54,6 +54,7 @@ struct SignInEmailView: View {
                 .padding()
                 .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)
+          
             
             Button{
                 Task{
@@ -82,6 +83,8 @@ struct SignInEmailView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
+            
+           
         }
         .padding()
         .navigationTitle("Sign In With Email")
