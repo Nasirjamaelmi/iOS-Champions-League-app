@@ -51,6 +51,9 @@
 		0F9AFE9D2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
 		0F9AFE9E2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
 		0F9AFE9F2B9B453B00254609 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */; };
+		B1240F292B9B50D200A0E5A7 /* fanta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1240F282B9B50D200A0E5A7 /* fanta.swift */; };
+		B1240F2A2B9B50D200A0E5A7 /* fanta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1240F282B9B50D200A0E5A7 /* fanta.swift */; };
+		B1240F2B2B9B50D200A0E5A7 /* fanta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1240F282B9B50D200A0E5A7 /* fanta.swift */; };
 		B1EE4C332B8F3166005386B0 /* Fanstasyleague.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */; };
 		B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */; };
 		B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */; };
@@ -103,6 +106,7 @@
 		0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		0F9AFE982B9B453100254609 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1240F282B9B50D200A0E5A7 /* fanta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fanta.swift; sourceTree = "<group>"; };
 		B1EE4C322B8F3166005386B0 /* Fanstasyleague.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleague.swift; sourceTree = "<group>"; };
 		B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanstasyleaguedata.swift; sourceTree = "<group>"; };
 		B1EE4C382B8F830A005386B0 /* fantasyleaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fantasyleaderboard.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 		B1EEA5602B83773000299C5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B1240F282B9B50D200A0E5A7 /* fanta.swift */,
 				B1EEA5632B83781100299C5F /* championsgetdata.swift */,
 				0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */,
 				B1EE4C342B8F31C5005386B0 /* Fanstasyleaguedata.swift */,
@@ -449,6 +454,7 @@
 				B1EE4C392B8F830A005386B0 /* fantasyleaderboard.swift in Sources */,
 				B1EEA5622B83775900299C5F /* championsleague.swift in Sources */,
 				B1EE4C352B8F31C5005386B0 /* Fanstasyleaguedata.swift in Sources */,
+				B1240F292B9B50D200A0E5A7 /* fanta.swift in Sources */,
 				0F3CE93F2B8FB06B00BD352D /* MatchesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +471,7 @@
 				0F7EA76E2B9B18400068E095 /* Utilites.swift in Sources */,
 				0F53FA3C2B987542001834B1 /* profileView.swift in Sources */,
 				0F53FA342B986650001834B1 /* SignInEmailView.swift in Sources */,
+				B1240F2A2B9B50D200A0E5A7 /* fanta.swift in Sources */,
 				0F53FA302B9864F3001834B1 /* AuthenticationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +489,7 @@
 				0F53FA312B9864F3001834B1 /* AuthenticationView.swift in Sources */,
 				0F53FA412B987C37001834B1 /* RootView.swift in Sources */,
 				0F53FA392B986B73001834B1 /* AuthenticationManager.swift in Sources */,
+				B1240F2B2B9B50D200A0E5A7 /* fanta.swift in Sources */,
 				0F53FA352B986650001834B1 /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
