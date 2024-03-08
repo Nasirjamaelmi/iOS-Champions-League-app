@@ -5,9 +5,8 @@
 //  Created by Zachery Arscott on 2024-03-08.
 //
 /*
-import SwiftUI
 import Foundation
-
+import SwiftUI
 
 class FantasyLeagueViewModel: ObservableObject {
 
@@ -65,7 +64,7 @@ class FantasyLeagueViewModel: ObservableObject {
   }
 
   func buyPlayer(player: Player) async throws {
-    try await { user.buyPlayer(player: player, context: $0) }
+    try await withValue { user.buyPlayer(player: player, context: $0) }
     // Update availablePlayers and selectedPlayers based on changes (optional)
     objectWillChange.send()
   }
