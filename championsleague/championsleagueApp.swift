@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import SwiftData
 
 
 class AppDelegate: NSObject, UIApplicationDelegate{
@@ -30,6 +31,8 @@ struct championsleagueApp: App {
         
         WindowGroup {
             ContentView()
+            //.modelContainer(for: PlayerFantasyStats.self )
+
         }
     }
 }

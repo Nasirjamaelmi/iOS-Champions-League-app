@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 
 
+
 struct tabScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     var body: some View {
@@ -169,6 +170,7 @@ struct tabScreen: View {
             Task {
                 await fantasyModel.loadAllData()
                 self.players = FantasyStatsProcessor.getLeaderboard()
+                print("players fetched: \(players.count)")
                 
             }
         }

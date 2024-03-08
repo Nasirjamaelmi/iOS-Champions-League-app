@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct LeaugeCardView: View {
     let match: ChampionsLeagueData.MatchData.Match
     
