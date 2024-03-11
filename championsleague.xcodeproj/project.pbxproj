@@ -18,6 +18,7 @@
 		0F43122B2B8DD16F00DBAA03 /* colorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */; };
 		0F534E6F2B9EFCF3004CD57D /* championsleagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA54E2B8376E400299C5F /* championsleagueUITests.swift */; };
 		0F534E702B9EFCF8004CD57D /* championsleagueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA5442B8376E400299C5F /* championsleagueTests.swift */; };
+		0F534E762B9F0757004CD57D /* ChampionsleaugeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F534E752B9F0757004CD57D /* ChampionsleaugeModelTests.swift */; };
 		0F53FA252B9861F5001834B1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0F53FA242B9861F5001834B1 /* FirebaseAnalytics */; };
 		0F53FA272B9861F9001834B1 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F53FA262B9861F9001834B1 /* FirebaseAnalyticsSwift */; };
 		0F53FA292B98638A001834B1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0F53FA282B98638A001834B1 /* FirebaseAuth */; };
@@ -82,6 +83,7 @@
 		0F534E502B9EF966004CD57D /* championsleagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueTests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueTests.xctest"; sourceTree = "<absolute>"; };
 		0F534E522B9EF9AC004CD57D /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = championsleague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F534E712B9EFDF0004CD57D /* championsleagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueUITests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueUITests.xctest"; sourceTree = "<absolute>"; };
+		0F534E752B9F0757004CD57D /* ChampionsleaugeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsleaugeModelTests.swift; sourceTree = "<group>"; };
 		0F53FA2E2B9864F3001834B1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		0F53FA322B986650001834B1 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		0F53FA362B986B73001834B1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EEA5442B8376E400299C5F /* championsleagueTests.swift */,
+				0F534E752B9F0757004CD57D /* ChampionsleaugeModelTests.swift */,
 			);
 			path = championsleagueTests;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			files = (
 				0F7EA76E2B9B18400068E095 /* Utilites.swift in Sources */,
 				0F534E702B9EFCF8004CD57D /* championsleagueTests.swift in Sources */,
+				0F534E762B9F0757004CD57D /* ChampionsleaugeModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
