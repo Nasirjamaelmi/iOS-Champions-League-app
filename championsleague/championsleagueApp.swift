@@ -31,7 +31,7 @@ struct championsleagueApp: App {
         
         WindowGroup {
             ContentView()
-            .modelContainer(for: Player.self )
+            //.modelContainer(for: PlayerFantasyStats.self )
 
         }
     }

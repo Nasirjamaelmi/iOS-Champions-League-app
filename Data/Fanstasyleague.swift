@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftData
-import StoreKit
 
 
 struct FanstasyleagueData: Decodable {
@@ -42,7 +41,7 @@ struct Players: Decodable {
 }
 
 
-enum StatType: String, Codable {
+enum StatType: String, Decodable {
         case goals = "goals",
              assists = "goal_assist",
              yellowCards = "yellow_card",
@@ -111,79 +110,84 @@ class FantasyStatsProcessor {
 
 
 
-
-
+/*
+// Player.swift
 @Model
-class Player: Identifiable {
-    let id: Int64
-    var name: String
-    var price: Double
-    var fantasyStats: [StatType: Double] = [:]
-    
-    
-    var fantasyPoints: Int {
-            fantasyStats.reduce(0) { total, stat in
-                total + stat.key.pointsValue(for: stat.value)
-            }
-        }
-    
-    var computedPrice: Double {
-            Double(fantasyPoints * 50000)
-        }
-    
-    init(id: Int64, name: String, price: Double, fantasyPoints: [StatType: Double] = [:]) {
-        self.id = id
-        self.name = name
-        self.price = price
-        self.fantasyStats = fantasyStats
-        
-    }
-    
-    func updateStat(type: StatType, value: Double) {
-            fantasyStats[type, default: 0] += value
-        self.price = computedPrice
-        }
+struct Player: Identifiable {
+  let id: Int
+  let name: String
+  let price: Double
+  var fantasyStats: [StatType: Double] // Dictionary to store player's stats for different categories
 
-        // New method to update fantasy stats in bulk
-        func updateFantasyStats(newStats: [StatType: Double]) {
-            for (statType, newValue) in newStats {
-                updateStat(type: statType, value: newValue)
-            }
-        }
+  // Additional player properties like team, position (optional)
+
+  init(id: Int, name: String, price: Double, fantasyStats: [StatType: Double]) {
+    self.id = id
+    self.name = name
+    self.price = price
+    self.fantasyStats = fantasyStats
+  }
 }
 
-
-
-
-
+// Transaction.swift
 @Model
-class User {
-    let id: UUID = UUID()
-    var username: String
-    var budget: Double
-    @Relationship(inverse: \Transaction.user)
-    var transactions: [Transaction]
+struct Transaction {
+  let id: UUID
+  let user: User // Relationship to User model
+  let player: Player // Relationship to User model
+  let buy: Bool // Flag to indicate buy (true) or sell (false) transaction
+  let price: Double
 
-    init(username: String, budget: Double) {
-        self.username = username
-        self.budget = budget
-    }
+  init(id: UUID = UUID(), user: User, player: Player, buy: Bool, price: Double) {
+    self.id = id
+    self.user = user
+    self.player = player
+    self.buy = buy
+    self.price = price
+  }
 }
 
-
-
+// User.swift
 @Model
-class Transaction {
-    let id: UUID = UUID()
-    var player: Player
-    var user: User
-    var isPurchase: Bool
-    var transactionDate: Date
-    
-    init(player: Player, user: User, isPurchase: Bool, transactionDate: Date = Date()) {
-        self.player = player
-        self.user = user
-        self.isPurchase = isPurchase
-        self.transactionDate = transactionDate
+class User: Identifiable {
+  let id: UUID
+  let username: String
+    var budget: Double // 5 million in your case
+  var selectedPlayerIds: [Int] // Array of player IDs
+
+
+
+  init(id: UUID = UUID(), username: String, budget: Double, selectedPlayerIds: [Int] = []) {
+    self.id = id
+    self.username = username
+    self.budget = budget
+    self.selectedPlayerIds = selectedPlayerIds
+  }
+
+  // Function to check if a player can be bought
+  func canBuy(player: Player) -> Bool {
+    return budget >= player.price && selectedPlayerIds.count < 5
+  }
+
+  // Function to perform buying a player
+  func buyPlayer(player: Player, context: ModelContext) throws {
+    guard canBuy(player: player) else {
+      throw NSError(domain: "FantasyLeagueError", code: 1, userInfo: ["message": "Insufficient budget or maximum players reached"])
     }
+    budget -= player.price
+    selectedPlayerIds.append(player.id)
+    try context.save()
+  }
+
+  // Function to perform selling a player
+  func sellPlayer(player: Player, context: ModelContext) throws {
+    guard selectedPlayerIds.contains(player.id) else {
+      throw NSError(domain: "FantasyLeagueError", code: 2, userInfo: ["message": "Player not found in selected players"])
+    }
+    budget += player.price
+    selectedPlayerIds.removeAll(where: { $0 == player.id })
+    try context.save()
+  }
 }
+
+*/

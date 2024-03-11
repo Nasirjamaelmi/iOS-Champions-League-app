@@ -34,11 +34,6 @@ struct tabScreen: View {
                 .tabItem {
                     Label("Stats", systemImage: "list.clipboard")
                 }
-            
-            FantasyScreen()
-                .tabItem {
-                    Label("Stats", systemImage: "list.clipboard")
-                }
         }
         .onAppear(){
             UITabBar.appearance().barTintColor = UIColor(Color(colorGreen))
@@ -179,20 +174,7 @@ struct tabScreen: View {
                 
             }
         }
-    }
-    
-    
-    
-    struct FantasyScreen: View {
-        @State var viewModel = FantasyLeagueViewModel()
-        var body: some View {
-                
-            FantasyLeagueView(viewModel: viewModel)
-        
-        }
-    }
-                                
-}
+    }}
 
 
 
