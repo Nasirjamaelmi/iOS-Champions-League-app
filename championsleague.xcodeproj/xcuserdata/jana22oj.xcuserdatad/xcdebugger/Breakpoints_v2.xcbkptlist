@@ -178,5 +178,144 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E575DBB-E964-494B-87D0-447C8047C5A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "championsleagueTests/ChampionsleaugeModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testProcessStats()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "championsleagueTests/ChampionsleaugeModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "FantasyLeagueTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 7c91a4e911d22d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.__allocating_init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 73f22c9c19729fff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 6ff6468bc4434e50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.__allocating_init(selector: ObjectiveC.Selector) -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 47a027b28403ecff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.init(selector: ObjectiveC.Selector) -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - b2230535ed44964"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.__allocating_init() -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 60706c39fb2247a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.init() -&gt; championsleagueTests.FantasyLeagueTests"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "D87D6073-EDE2-409F-A150-03AAC7D7BEC4 - 628cdf2d7483157"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleagueTests.FantasyLeagueTests.__deallocating_deinit"
+                  moduleName = "championsleagueTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/championsleagueTests/ChampionsleaugeModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
