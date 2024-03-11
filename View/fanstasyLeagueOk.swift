@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct FantasyLeagueView: View {
+    @Query private var transactions: [Transaction]
     var viewModel: FantasyLeagueViewModel
-    @Query var player: [Player]
+    
     
 
     var body: some View {
@@ -35,16 +36,18 @@ struct FantasyLeagueView: View {
                         }
                     }
                 }
-
-                Section(header: Text("Your Roster")) {
-                    ForEach(viewModel.user.transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
-                        Text(transaction.player.name)
+                
+                if let user = viewModel.user {
+                    Section(header: Text("Your Roster")) {
+                        ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
+                            Text(transaction.player.name)
+                        }
                     }
-                }
-
-                Section {
-                    Text("Budget: \(viewModel.user.budget, specifier: "%.2f")")
-                        .font(.title)
+                    
+                    Section {
+                        Text("Budget: \(user.budget, specifier: "%.2f")")
+                            .font(.title)
+                    }
                 }
             }
             .navigationTitle("Fantasy League")
@@ -56,6 +59,7 @@ struct FantasyLeagueView: View {
         }
     }
 }
+/*
 // Mock ViewModel for Preview
 class MockFantasyLeagueViewModel: FantasyLeagueViewModel {
     override init() {
@@ -76,3 +80,4 @@ struct FantasyLeagueView_Previews: PreviewProvider {
         FantasyLeagueView(viewModel: MockFantasyLeagueViewModel())
     }
 }
+*/

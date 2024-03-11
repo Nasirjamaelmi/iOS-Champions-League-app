@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import StoreKit
+import FirebaseAuth
 
 
 struct FanstasyleagueData: Decodable {
@@ -39,6 +40,7 @@ struct Players: Decodable {
     let Rank: Int
     let ParticipantCountryCode: String
     let TeamName: String
+    
 }
 
 
@@ -114,7 +116,7 @@ class FantasyStatsProcessor {
 
 
 @Model
-class Player: Identifiable {
+final class Player: Identifiable {
     let id: Int64
     var name: String
     var price: Double
@@ -157,14 +159,14 @@ class Player: Identifiable {
 
 
 @Model
-class User {
+class Usera {
     let id: UUID = UUID()
     var username: String
     var budget: Double
-    @Relationship(inverse: \Transaction.user)
-    var transactions: [Transaction]
+    var transactions: [Transaction] = []
 
-    init(username: String, budget: Double) {
+    init(id: UUID = UUID(),username: String, budget: Double) {
+        self.id = id
         self.username = username
         self.budget = budget
     }
@@ -176,14 +178,16 @@ class User {
 class Transaction {
     let id: UUID = UUID()
     var player: Player
-    var user: User
+    var user: Usera
     var isPurchase: Bool
     var transactionDate: Date
     
-    init(player: Player, user: User, isPurchase: Bool, transactionDate: Date = Date()) {
+    init(player: Player, user: Usera, isPurchase: Bool, transactionDate: Date = Date()) {
         self.player = player
         self.user = user
         self.isPurchase = isPurchase
         self.transactionDate = transactionDate
     }
 }
+
+
