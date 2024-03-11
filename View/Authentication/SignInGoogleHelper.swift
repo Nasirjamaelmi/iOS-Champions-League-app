@@ -9,6 +9,7 @@ import Foundation
 import GoogleSignIn
 import GoogleSignInSwift
 
+
 struct GoogleSignInResultModel {
     
     let idToken : String
