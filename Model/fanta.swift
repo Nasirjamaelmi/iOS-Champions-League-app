@@ -18,6 +18,7 @@ class FantasyLeagueViewModel{
     var user: Usera?
     var availablePlayers: [Player]
     let fantasyModel: FantasyModel
+  
     
     init(modelContext: ModelContext, user: Usera? = nil, availablePlayers: [Player], fantasyModel: FantasyModel) {
         self.modelContext = modelContext
@@ -112,7 +113,7 @@ class FantasyLeagueViewModel{
 
     func canBuyPlayer(player: Player) -> Bool {
         guard let user = user else { return false }
-        return user.budget >= player.price && user.transactions.count < 5
+        return user.budget >= player.price && user.transactions.count < 5 && user.transactions.filter { $0.isPurchase && $0.player.id == player.id }.isEmpty
     }
     
     func buyPlayer(player: Player) {
@@ -121,15 +122,24 @@ class FantasyLeagueViewModel{
         let transaction = Transaction(player: player, user: user, isPurchase: true)
         user.budget -= player.price
         user.transactions.append(transaction)
+      
     }
     
     func sellPlayer(player: Player){
         guard let user = user else {return}
+        
         guard let transactionIndex = user.transactions.firstIndex(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
         let sellingPrice = player.price * 0.8
         user.budget += sellingPrice
         user.transactions.remove(at: transactionIndex)
+        do {
+            try modelContext.save()
+        } catch {
+            print("Error saving transaction: \(error)")
+        }
     }
+    
+    
     
 //
 //    func buyPlayer(player: Player) {

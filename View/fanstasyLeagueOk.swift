@@ -10,10 +10,11 @@ import SwiftData
 
 struct FantasyLeagueView: View {
     @Query private var transactions: [Transaction]
-    var viewModel: FantasyLeagueViewModel
+    @State var viewModel: FantasyLeagueViewModel
+    @State private var selectedTab = 0
     
     
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -37,10 +38,19 @@ struct FantasyLeagueView: View {
                     }
                 }
                 
+                
+                
                 if let user = viewModel.user {
                     Section(header: Text("Your Roster")) {
                         ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
-                            Text(transaction.player.name)
+                            HStack{
+                                Text(transaction.player.name)
+                                Spacer()
+                                Button("Sell"){
+                                    viewModel.sellPlayer(player: transaction.player)
+                                }
+                                .buttonStyle(.borderedProminent)
+                            }
                         }
                     }
                     
@@ -59,6 +69,8 @@ struct FantasyLeagueView: View {
         }
     }
 }
+
+
 /*
 // Mock ViewModel for Preview
 class MockFantasyLeagueViewModel: FantasyLeagueViewModel {
