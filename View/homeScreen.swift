@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 import Foundation
 
 
 
 struct tabScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
+    let fantasyModel: FantasyModel
+    let modelContext: ModelContext
     var body: some View {
         TabView{
             homeScreen()
@@ -30,7 +33,13 @@ struct tabScreen: View {
                 .tabItem {
                     Label("Standings" , systemImage: "soccerball")
                 }
-            StatsScreen()
+            StatsScreen(fantasyModel: fantasyModel)
+                .tabItem {
+                    Label("Stats", systemImage: "list.clipboard")
+                }
+            
+            FantasyScreen(fantasyModel: fantasyModel, modelContext: modelContext)
+                //.modelContainer(for: Player.self, inMemory: true)
                 .tabItem {
                     Label("Stats", systemImage: "list.clipboard")
                 }
@@ -146,7 +155,7 @@ struct tabScreen: View {
     }
     
     struct StatsScreen: View {
-        @State var fantasyModel = FantasyModel()
+        let fantasyModel: FantasyModel
         @State var players: [PlayerFantasyStats] = []
         
         var body: some View {
@@ -174,11 +183,31 @@ struct tabScreen: View {
                 
             }
         }
-    }}
-
-
-
-#Preview {
-    tabScreen()
+    }
     
+    
+    
+    struct FantasyScreen: View {
+        let modelContext: ModelContext
+        @State private var viewModel: FantasyLeagueViewModel
+        let fantasyModel: FantasyModel
+        
+        init(fantasyModel: FantasyModel, modelContext: ModelContext) {
+            self.fantasyModel = fantasyModel
+            self.modelContext = modelContext
+            self._viewModel = State(wrappedValue: FantasyLeagueViewModel(modelContext: modelContext, availablePlayers: [], fantasyModel: fantasyModel))
+        }
+        var body: some View {
+            FantasyLeagueView(viewModel: viewModel)
+        }
+    }
+                                
 }
+
+
+
+//#Preview {
+//    @State var fantasyModelPreview = FantasyModel()
+//    return tabScreen(fantasyModel: fantasyModelPreview)
+//    
+//}

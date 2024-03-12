@@ -20,20 +20,31 @@ class AppDelegate: NSObject, UIApplicationDelegate{
 
 @main
 struct championsleagueApp: App {
-  
+    let container: ModelContainer
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     init() {
+        do {
+            container = try ModelContainer(for: Usera.self, Transaction.self)
+        } catch {
+            fatalError("Failed to create modelcontainer for model")
+        }
+        
         FirebaseApp.configure()
+        //let container = try! ModelContainer(for: Usera.self)
+        
     }
     
     var body: some Scene {
         
+        
         WindowGroup {
-            ContentView()
-            //.modelContainer(for: PlayerFantasyStats.self )
+            ContentView(modelContext: container.mainContext)
+                //.modelContainer(for: Player.self)
 
         }
+        .modelContainer(container)
     }
 }
 
