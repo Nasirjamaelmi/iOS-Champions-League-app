@@ -80,9 +80,7 @@
 		0F3CE93E2B8FB06B00BD352D /* MatchesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesScreen.swift; sourceTree = "<group>"; };
 		0F4312282B8CA60B00DBAA03 /* homeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeScreen.swift; sourceTree = "<group>"; };
 		0F43122A2B8DD16F00DBAA03 /* colorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFromHex.swift; sourceTree = "<group>"; };
-		0F534E502B9EF966004CD57D /* championsleagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueTests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueTests.xctest"; sourceTree = "<absolute>"; };
-		0F534E522B9EF9AC004CD57D /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = championsleague.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F534E712B9EFDF0004CD57D /* championsleagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueUITests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueUITests.xctest"; sourceTree = "<absolute>"; };
+		0F534E522B9EF9AC004CD57D /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = championsleague.app; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleague.app"; sourceTree = "<absolute>"; };
 		0F534E752B9F0757004CD57D /* ChampionsleaugeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsleaugeModelTests.swift; sourceTree = "<group>"; };
 		0F53FA2E2B9864F3001834B1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		0F53FA322B986650001834B1 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
@@ -90,6 +88,8 @@
 		0F53FA3A2B987542001834B1 /* profileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileView.swift; sourceTree = "<group>"; };
 		0F53FA3E2B987C37001834B1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0F53FA422B987DE2001834B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0F7D47442BA049C600B8F557 /* championsleagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueTests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueTests.xctest"; sourceTree = "<absolute>"; };
+		0F7D47452BA049C600B8F557 /* championsleagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = championsleagueUITests.xctest; path = "/Users/jana22oj/Documents/GitHub/ios-final-project-group-10-theboyz/build/Debug-iphoneos/championsleagueUITests.xctest"; sourceTree = "<absolute>"; };
 		0F7EA76A2B9B10F60068E095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0F7EA76C2B9B18400068E095 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		0F7EA7702B9B34530068E095 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
@@ -157,13 +157,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0F534E532B9EFB0F004CD57D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0F53FA1D2B98609D001834B1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +191,6 @@
 				B1EEA5322B8376E200299C5F /* championsleague */,
 				B1EEA5432B8376E400299C5F /* championsleagueTests */,
 				B1EEA54D2B8376E400299C5F /* championsleagueUITests */,
-				0F534E522B9EF9AC004CD57D /* championsleague.app */,
-				0F534E532B9EFB0F004CD57D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,7 +296,7 @@
 			packageProductDependencies = (
 			);
 			productName = championsleagueTests;
-			productReference = 0F534E502B9EF966004CD57D /* championsleagueTests.xctest */;
+			productReference = 0F7D47442BA049C600B8F557 /* championsleagueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B1EEA5492B8376E400299C5F /* championsleagueUITests */ = {
@@ -325,7 +316,7 @@
 			packageProductDependencies = (
 			);
 			productName = championsleagueUITests;
-			productReference = 0F534E712B9EFDF0004CD57D /* championsleagueUITests.xctest */;
+			productReference = 0F7D47452BA049C600B8F557 /* championsleagueUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */

@@ -112,3 +112,56 @@ class FantasyLeagueTests: XCTestCase {
         XCTAssertEqual(cleanSheetsStatType.pointsValue(for: 0.0), 0)
     }
 }
+
+class FootballModelTests: XCTestCase {
+    
+    var footballModel: FootballModel!
+    
+    override func setUp() {
+        super.setUp()
+        footballModel = FootballModel()
+    }
+
+    override func tearDown() {
+        footballModel = nil
+        super.tearDown()
+    }
+
+    func testLoadFeedSuccess() async throws {
+        // Given
+        let expectation = XCTestExpectation(description: "Load feed success")
+        
+        // When
+        try await footballModel.loadfeed()
+        
+        // Then
+        XCTAssertNotNil(footballModel.footballData, "Football data should not be nil after loading feed")
+        XCTAssertFalse(footballModel.isLoading, "isLoading should be false after loading feed")
+        expectation.fulfill()
+        
+        // Wait for the expectation to be fulfilled
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testLoadFeedFailure() async {
+        // Given
+        let expectation = XCTestExpectation(description: "Load feed failure")
+        
+        // When
+        footballModel = FootballModel() // Reset the model to ensure a clean state
+        // Intentionally set an invalid URL to force a failure
+        await footballModel.loadfeed()
+        
+        // Then
+        XCTAssertNil(footballModel.footballData, "Football data should be nil after a failed load feed")
+        XCTAssertFalse(footballModel.isLoading, "isLoading should be false after a failed load feed")
+        expectation.fulfill()
+        
+        // Wait for the expectation to be fulfilled
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    // Add more test cases as needed
+    
+}
+
