@@ -133,6 +133,7 @@ final class Player: Identifiable {
             Double(fantasyPoints * 50000)
         }
     
+    
     init(id: Int64, name: String, price: Double, fantasyPoints: [StatType: Double] = [:]) {
         self.id = id
         self.name = name

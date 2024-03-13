@@ -13,87 +13,91 @@ struct FantasyLeagueView: View {
     @State var viewModel: FantasyLeagueViewModel
     @State private var selectedTab = 0
     @State private var isDataLoaded = false
-    @State private var searchText = "" // 1. State to hold search text
+    @State private var searchText = ""
 
-        // Computed property to filter players based on search text
-        private var filteredPlayers: [Player] {
-            if searchText.isEmpty {
-                return viewModel.availablePlayers
-            } else {
-                return viewModel.availablePlayers.filter { player in
-                    player.name.lowercased().contains(searchText.lowercased())
-                }
-            }
-        }
-
-        var body: some View {
-            TabView(selection: $selectedTab) {
-                NavigationView {
-                    List {
-                        Section(header: Text("Available Players")) {
-                            TextField("Search Players", text: $searchText) // 3. Search bar
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding()
-
-                            ForEach(filteredPlayers) { player in // 4. Use filtered list
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        Text(player.name)
-                                            .font(.headline)
-                                        Text("Fantasy Points: \(player.fantasyPoints)")
-                                        Text("Price: \(player.price, specifier: "%.2f")")
-                                    }
-                                    Spacer()
-                                    if viewModel.canBuyPlayer(player: player) {
-                                        Button("Buy") {
-                                            viewModel.buyPlayer(player: player)
-                                        }
-                                        .buttonStyle(.borderedProminent)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .navigationTitle("Available Players")
-                    .onAppear {
-                        Task {
-                            if !isDataLoaded {
-                                await viewModel.loadData()
-                                isDataLoaded = true
-                            }
-                        }
-                    }
-                }
-                .tabItem {
-                    Label("Market", systemImage: "dollarsign.circle")
-                }
-                .tag(0)
-            
+    var body: some View {
+        TabView(selection: $selectedTab) {
             NavigationView {
                 List {
-                    if let user = viewModel.user {
-                        Section(header: Text("Your Roster")) {
-                            ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        Text(transaction.player.name)
-                                        // Display the player's price in your roster
-                                        Text("Price: \(transaction.player.price, specifier: "%.2f")")
-                                            .font(.subheadline)
-                                    }
-                                    Spacer()
-                                    Button("Sell") {
-                                        viewModel.sellPlayer(player: transaction.player)
-                                        // Consider refreshing or updating the list to reflect the sale
+                    Section(header: Text("Available Players")) {
+                        TextField("Search Players", text: $searchText)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+
+                        ForEach(viewModel.availablePlayers.filter { player in
+                            searchText.isEmpty || player.name.lowercased().contains(searchText.lowercased())
+                        }) { player in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(player.name).font(.headline)
+                                    Text("Fantasy Points: \(player.fantasyPoints)")
+                                    Text("Price: \(player.price, specifier: "%.2f")")
+                                }
+                                Spacer()
+                                if viewModel.canBuyPlayer(player: player) {
+                                    Button("Buy") {
+                                        viewModel.buyPlayer(player: player)
                                     }
                                     .buttonStyle(.borderedProminent)
                                 }
                             }
                         }
+                    }
+                }
+                .navigationTitle("Available Players")
+                .onAppear {
+                    Task {
+                        if !isDataLoaded {
+                            await viewModel.loadData()
+                            isDataLoaded = true
+                        }
+                    }
+                }
+            }
+            .tabItem {
+                Label("Market", systemImage: "dollarsign.circle")
+            }
+            .tag(0)
+            
+           NavigationView {
+               List {
+                   if let user = viewModel.user {
+                       Section(header: Text("Your Roster")) {
+                           ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
+                               HStack {
+                                   VStack(alignment: .leading) {
+                                       Text(transaction.player.name)
+                                       Text("Price: \(transaction.player.price, specifier: "%.2f")")
+                                           .font(.subheadline)
+                                                }
+                                            Spacer()
+                                            Button("Sell") {viewModel.sellPlayer(player: transaction.player)
+                                                    
+                                                }
+                                                .buttonStyle(.borderedProminent)
+                                            }
+                                        }
+                                    }
                         
                         Section {
-                            Text("Budget: \(user.budget, specifier: "%.2f")")
-                                .font(.title)
+                            Text("Budget: \(user.budget, specifier: "%.2f")").font(.title)
+                        }
+                    }
+                    Section(header: Text("Transaction History")) {
+                        ForEach(transactions) { transaction in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(transaction.player.name)
+                                    Text(transaction.isPurchase ? "Bought" : "Sold")
+                                        .font(.subheadline)
+                                    Text("Price: \(transaction.player.price, specifier: "%.2f")")
+                                        .font(.subheadline)
+                                }
+                                Spacer()
+                                Text(transaction.transactionDate, formatter: transactionDateFormatter)
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                            }
                         }
                     }
                 }
@@ -106,6 +110,14 @@ struct FantasyLeagueView: View {
         }
     }
 }
+
+
+let transactionDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+}()
 
 
 
