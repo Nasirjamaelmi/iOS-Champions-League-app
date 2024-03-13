@@ -177,8 +177,8 @@ class Usera {
 @Model
 class Transaction {
     let id: UUID = UUID()
-    var player: Player
-    var user: Usera
+    @Relationship(deleteRule: .noAction) var player: Player
+    @Relationship(deleteRule: .nullify) var user: Usera
     var isPurchase: Bool
     var transactionDate: Date
     

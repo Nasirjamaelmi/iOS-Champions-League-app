@@ -12,63 +12,101 @@ struct FantasyLeagueView: View {
     @Query private var transactions: [Transaction]
     @State var viewModel: FantasyLeagueViewModel
     @State private var selectedTab = 0
-    
-    
-    
-    var body: some View {
-        NavigationView {
-            List {
-                Section(header: Text("Available Players")) {
-                    ForEach(viewModel.availablePlayers) { player in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(player.name)
-                                    .font(.headline)
-                                Text("Fantasy Points: \(player.fantasyPoints)")
-                                Text("Price: \(player.price, specifier: "%.2f")")
-                            }
-                            Spacer()
-                            if viewModel.canBuyPlayer(player: player) {
-                                Button("Buy") {
-                                    viewModel.buyPlayer(player: player)
-                                }
-                                .buttonStyle(.borderedProminent)
-                            }
-                        }
-                    }
-                }
-                
-                
-                
-                if let user = viewModel.user {
-                    Section(header: Text("Your Roster")) {
-                        ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
-                            HStack{
-                                Text(transaction.player.name)
-                                Spacer()
-                                Button("Sell"){
-                                    viewModel.sellPlayer(player: transaction.player)
-                                }
-                                .buttonStyle(.borderedProminent)
-                            }
-                        }
-                    }
-                    
-                    Section {
-                        Text("Budget: \(user.budget, specifier: "%.2f")")
-                            .font(.title)
-                    }
+    @State private var isDataLoaded = false
+    @State private var searchText = "" // 1. State to hold search text
+
+        // Computed property to filter players based on search text
+        private var filteredPlayers: [Player] {
+            if searchText.isEmpty {
+                return viewModel.availablePlayers
+            } else {
+                return viewModel.availablePlayers.filter { player in
+                    player.name.lowercased().contains(searchText.lowercased())
                 }
             }
-            .navigationTitle("Fantasy League")
         }
-        .onAppear {
-            Task {
-                await viewModel.loadData()
+
+        var body: some View {
+            TabView(selection: $selectedTab) {
+                NavigationView {
+                    List {
+                        Section(header: Text("Available Players")) {
+                            TextField("Search Players", text: $searchText) // 3. Search bar
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+
+                            ForEach(filteredPlayers) { player in // 4. Use filtered list
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(player.name)
+                                            .font(.headline)
+                                        Text("Fantasy Points: \(player.fantasyPoints)")
+                                        Text("Price: \(player.price, specifier: "%.2f")")
+                                    }
+                                    Spacer()
+                                    if viewModel.canBuyPlayer(player: player) {
+                                        Button("Buy") {
+                                            viewModel.buyPlayer(player: player)
+                                        }
+                                        .buttonStyle(.borderedProminent)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .navigationTitle("Available Players")
+                    .onAppear {
+                        Task {
+                            if !isDataLoaded {
+                                await viewModel.loadData()
+                                isDataLoaded = true
+                            }
+                        }
+                    }
+                }
+                .tabItem {
+                    Label("Market", systemImage: "dollarsign.circle")
+                }
+                .tag(0)
+            
+            NavigationView {
+                List {
+                    if let user = viewModel.user {
+                        Section(header: Text("Your Roster")) {
+                            ForEach(transactions.filter { $0.isPurchase }, id: \.player.id) { transaction in
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(transaction.player.name)
+                                        // Display the player's price in your roster
+                                        Text("Price: \(transaction.player.price, specifier: "%.2f")")
+                                            .font(.subheadline)
+                                    }
+                                    Spacer()
+                                    Button("Sell") {
+                                        viewModel.sellPlayer(player: transaction.player)
+                                        // Consider refreshing or updating the list to reflect the sale
+                                    }
+                                    .buttonStyle(.borderedProminent)
+                                }
+                            }
+                        }
+                        
+                        Section {
+                            Text("Budget: \(user.budget, specifier: "%.2f")")
+                                .font(.title)
+                        }
+                    }
+                }
+                .navigationTitle("Your Roster")
             }
+            .tabItem {
+                Label("Roster", systemImage: "person.3.fill")
+            }
+            .tag(1)
         }
     }
 }
+
 
 
 /*

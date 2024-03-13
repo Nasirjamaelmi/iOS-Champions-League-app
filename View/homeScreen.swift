@@ -35,13 +35,13 @@ struct tabScreen: View {
                 }
             StatsScreen(fantasyModel: fantasyModel)
                 .tabItem {
-                    Label("Stats", systemImage: "list.clipboard")
+                    Label("Fantasy LeaderBoard", systemImage: "list.clipboard")
                 }
             
             FantasyScreen(fantasyModel: fantasyModel, modelContext: modelContext)
                 //.modelContainer(for: Player.self, inMemory: true)
                 .tabItem {
-                    Label("Stats", systemImage: "list.clipboard")
+                    Label("Fantasy League", systemImage: "list.clipboard")
                 }
         }
         .onAppear(){

@@ -78,6 +78,7 @@ class FantasyLeagueViewModel{
             } else {
                 let newUser = Usera(username: "user", budget: 3000000)
                 modelContext.insert(newUser)
+                // try? modelContext.save()
                 self.user = newUser
             }
         } catch {
@@ -99,12 +100,14 @@ class FantasyLeagueViewModel{
     private func processFantasyDataIntoPlayers() -> [Player] {
         var players: [Player] = []
         for (_, playerStats) in FantasyStatsProcessor.fantasyPlayers {
+            print("Processing player: \(playerStats.name), Stats: \(playerStats.stats)")
             let newPlayer = Player(
                 id: Int64(playerStats.id),
                 name: playerStats.name,
-                price: Double(playerStats.totalPoints * 50000), // Assuming computedPrice reflects total points
+                price: Double(playerStats.totalPoints * 50000),
                 fantasyPoints: playerStats.stats
             )
+            print("New Player:\(newPlayer.name), Fantasy Points: \(newPlayer.fantasyPoints)")
             players.append(newPlayer)
         }
         return players
@@ -129,14 +132,24 @@ class FantasyLeagueViewModel{
         guard let user = user else {return}
         
         guard let transactionIndex = user.transactions.firstIndex(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
+        
+        guard let transaction = user.transactions.first(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
+        
         let sellingPrice = player.price * 0.8
         user.budget += sellingPrice
-        user.transactions.remove(at: transactionIndex)
-        do {
-            try modelContext.save()
-        } catch {
-            print("Error saving transaction: \(error)")
-        }
+        
+        modelContext.delete(transaction)
+        
+        //user.transactions.remove(at: transactionIndex)
+        
+        
+        //user.transactions.remove(at: transactionIndex)
+        //modelContext.delete(transactionIndex)
+//        do {Type 'Transaction.Type' cannot conform to 'PersistentModel'
+//            try modelContext.save()
+//        } catch {
+//            print("Error saving transaction: \(error)")
+//        }
     }
     
     

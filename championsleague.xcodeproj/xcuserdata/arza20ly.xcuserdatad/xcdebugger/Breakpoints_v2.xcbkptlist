@@ -130,5 +130,165 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36BD64A0-0887-40E6-8C6E-9885A6704838"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Model/fanta.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "sellPlayer(player:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "36BD64A0-0887-40E6-8C6E-9885A6704838 - 93cd25b926b5fd8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "36BD64A0-0887-40E6-8C6E-9885A6704838 - 93cd25b926b5fd8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76197D1D-0168-438F-8E12-80DFA8B15B84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Model/fanta.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "sellPlayer(player:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76197D1D-0168-438F-8E12-80DFA8B15B84 - 93cd25b926b5fd68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "76197D1D-0168-438F-8E12-80DFA8B15B84 - 93cd25b926b5fd68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16C5854F-2C10-4927-B278-E64210817A6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Model/fanta.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "sellPlayer(player:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "16C5854F-2C10-4927-B278-E64210817A6D - 93cd25b926b5fca2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "16C5854F-2C10-4927-B278-E64210817A6D - 93cd25b926b5fca2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
+                  moduleName = "championsleague"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "452">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B59E875-1AFA-4933-B9A4-77469A2491EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/yy/7hh2341s79lg_wz2k0gnpn4nvry208/T/swift-generated-sources/@__swiftmacro_15championsleague11TransactionC6player18_PersistedPropertyfMa_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
