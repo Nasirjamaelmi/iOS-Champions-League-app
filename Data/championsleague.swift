@@ -80,16 +80,16 @@
         
         // firstUnplayed is causing issuse not sure why could be beacuse of the games now going into quaterfinals
         struct MatchData: Decodable {
-            let firstUnplayedMatch: FirstUnplayedMatch
+            //let firstUnplayedMatch: FirstUnplayedMatch
             let allMatches: [Match]
             
-            struct FirstUnplayedMatch: Decodable {
+            /*struct FirstUnplayedMatch: Decodable {
                 let firstRoundWithUnplayedMatch: Int
                 let firstUnplayedMatchIndex: Int
                 let firstUnplayedMatchId: String
             }
              
-            
+            */
             struct Match: Decodable, Identifiable {
                 let round: Int
                 let roundName: String

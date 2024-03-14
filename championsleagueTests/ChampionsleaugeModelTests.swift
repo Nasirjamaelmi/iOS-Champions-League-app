@@ -8,7 +8,7 @@
 import XCTest
 @testable import championsleague
 import SwiftData
-
+//https://chat.openai.com/share/2a285704-3088-4dd5-a1fe-c76ec7dd9aeb diffculty finding more unittest other then them or swiftdata which gets complicated if we use it because of like modelcontext
 final class ChampionsleaugeModelTests: XCTestCase {
     
     override func setUpWithError() throws {
@@ -30,6 +30,7 @@ final class ChampionsleaugeModelTests: XCTestCase {
      
      
      }*/
+    
     func testProcessStats() {
         FantasyStatsProcessor.fantasyPlayers = [:]
         var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
@@ -120,7 +121,7 @@ class FantasyLeagueTests: XCTestCase {
     }
 }
 
-
+// doing unit test on the model
 class ChampionsLeagueDataTests: XCTestCase {
     
     func testDecoding() throws {
@@ -138,11 +139,6 @@ class ChampionsLeagueDataTests: XCTestCase {
             },
             "table": [],
             "matches": {
-                "firstUnplayedMatch": {
-                    "firstRoundWithUnplayedMatch": 1,
-                    "firstUnplayedMatchIndex": 0,
-                    "firstUnplayedMatchId": "123"
-                },
                 "allMatches": []
             }
         }
@@ -159,9 +155,6 @@ class ChampionsLeagueDataTests: XCTestCase {
         XCTAssertEqual(championsLeagueData.details.latestSeason, "2023/2024")
         XCTAssertEqual(championsLeagueData.details.shortName, "UCL")
         XCTAssertEqual(championsLeagueData.details.country, "Europe")
-        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstRoundWithUnplayedMatch, 1)
-        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstUnplayedMatchIndex, 0)
-        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstUnplayedMatchId, "123")
         XCTAssertTrue(championsLeagueData.table.isEmpty)
         XCTAssertTrue(championsLeagueData.matches.allMatches.isEmpty)
     }
@@ -221,21 +214,55 @@ class ChampionsLeagueDataTests: XCTestCase {
 class PlayerFantasyStatsTests: XCTestCase {
     
     func testTotalPointsCalculation() {
-        // Create some sample stats
+        // Create sample stats
         let stats: [StatType: Double] = [.goals: 2, .assists: 1, .yellowCards: 1, .redCards: 0, .cleanSheets: 0]
         
-        // Create a PlayerFantasyStats instance with the sample stats
+        // Create a PlayerFantasyStats instance
         let playerStats = PlayerFantasyStats(ParticipantName: "John", ParticiantId: 1, name: "John Doe", id: 123, stats: stats)
         
-        // Calculate the expected total points
-        // (2 goals * 10) + (1 assist * 5) + (1 yellow card * -5) + (0 red card * -10) + (0 clean sheet * 10)
+        // Calculate expected total points
         let expectedTotalPoints = (2 * 10) + (1 * 5) + (1 * -5) + (0 * -10) + (0 * 10)
         
-        // Verify that the total points calculation is correct
-        XCTAssertEqual(playerStats.totalPoints, expectedTotalPoints, "Total points calculation is incorrect")
+        // Verify total points calculation
+        XCTAssertEqual(playerStats.totalPoints, expectedTotalPoints)
     }
     
-  
+    func testTotalPointsWithMissingStat() {
+        // Create sample stats with missing stat
+        let stats: [StatType: Double] = [.goals: 2, .assists: 1, .yellowCards: 1]
+        
+        // Create a PlayerFantasyStats instance
+        let playerStats = PlayerFantasyStats(ParticipantName: "John", ParticiantId: 1, name: "John Doe", id: 123, stats: stats)
+        
+        // Expected points without the missing stat (cleanSheets)
+        let expectedTotalPoints = (2 * 10) + (1 * 5) + (1 * -5)
+        
+        // Verify total points calculation
+        XCTAssertEqual(playerStats.totalPoints, expectedTotalPoints)
+    }
+    
+    func testProcessStatsUpdatesExistingPlayerStats() {
+        // Given
+        FantasyStatsProcessor.fantasyPlayers = [:]
+        let initialStats: [StatType: Double] = [.goals: 5.0, .assists: 3.0]
+        let existingPlayer = PlayerFantasyStats(ParticipantName: "Player1", ParticiantId: 1, name: "Player1", id: 1, stats: initialStats)
+        FantasyStatsProcessor.fantasyPlayers[1] = existingPlayer
+        
+        let topList = TopList(StatName: .goals, Title: "Top Scorers", Subtitle: "Season", LocalizedTitleId: "top_scorers", LocalizedSubtitleId: "season", StatList: [
+            Players(ParticipantName: "Player1", ParticiantId: 1, TeamId: 101, TeamColor: "Red", StatValue: 2.0, SubStatValue: 0.0, MinutesPlayed: 90, MatchesPlayed: 10, StatValueCount: 1, Rank: 1, ParticipantCountryCode: "US", TeamName: "Team A")
+        ])
+        
+        // When
+        FantasyStatsProcessor.processStats(from: [topList])
+        
+        // Then
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers.count, 1)
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[1]?.stats[.goals], 7.0) // Existing goals (5.0) + New goals (2.0)
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[1]?.stats[.assists], 3.0) // Existing assists (3.0)
+    }
 }
+
+
+
 
 
