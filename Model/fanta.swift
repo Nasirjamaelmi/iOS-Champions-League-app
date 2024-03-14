@@ -12,6 +12,7 @@ import Observation
 import SwiftData
 import FirebaseAuth
 
+//Got alot of help from David wtih the User from 34-88
 @Observable
 class FantasyLeagueViewModel{
     var modelContext: ModelContext
@@ -88,9 +89,6 @@ class FantasyLeagueViewModel{
     
     func loadData() async {
         await fantasyModel.loadAllData()
-        // Assuming FantasyStatsProcessor is updated within the loadAllData call
-        
-        // Convert processed stats into Player models
         Task { @MainActor in
             self.availablePlayers = self.processFantasyDataIntoPlayers()
             
@@ -116,7 +114,7 @@ class FantasyLeagueViewModel{
 
     func canBuyPlayer(player: Player) -> Bool {
         guard let user = user else { return false }
-        return user.budget >= player.price && user.transactions.count < 5 && user.transactions.filter { $0.isPurchase && $0.player.id == player.id }.isEmpty
+        return user.budget >= player.price && user.transactions.count < 5 && user.transactions.filter { $0.isPurchase && $0.player.id == player.id }.isEmpty && player.price >= 0
     }
     
     func buyPlayer(player: Player) {
@@ -130,47 +128,12 @@ class FantasyLeagueViewModel{
     
     func sellPlayer(player: Player){
         guard let user = user else {return}
-        
-        guard let transactionIndex = user.transactions.firstIndex(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
-        
         guard let transaction = user.transactions.first(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
         
         let sellingPrice = player.price * 0.8
         user.budget += sellingPrice
         
         modelContext.delete(transaction)
-        
-        //user.transactions.remove(at: transactionIndex)
-        
-        
-        //user.transactions.remove(at: transactionIndex)
-        //modelContext.delete(transactionIndex)
-//        do {Type 'Transaction.Type' cannot conform to 'PersistentModel'
-//            try modelContext.save()
-//        } catch {
-//            print("Error saving transaction: \(error)")
-//        }
     }
-    
-    
-    
-//
-//    func buyPlayer(player: Player) {
-//        guard canBuyPlayer(player: player) else { return }
-//
-//        let transaction = Transaction(player: player, user: user, isPurchase: true)
-//        user.budget -= player.price
-//        user.transactions.append(transaction)
-//    
-//  
-//    }
-//
-//    func sellPlayer(player: Player) {
-//        guard let transactionIndex = user.transactions.firstIndex(where: {$0.player.id == player.id && $0.isPurchase}) else { return }
-//        
-//        let sellingPrice = player.price * 0.8 // Adjust discount factor as needed
-//        user.budget += sellingPrice
-//        user.transactions.remove(at: transactionIndex)
-//    }
 
 }

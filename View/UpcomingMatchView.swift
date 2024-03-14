@@ -20,8 +20,6 @@ struct UpcomingMatchView: View {
             }
             
             Spacer()
-            
-            // Display date and time centered
             VStack {
                 if let matchDate = match.status.utcTime.toDate() {
                     Text(matchDate, formatter: matchDateFormatter)
@@ -55,6 +53,7 @@ struct UpcomingMatchView: View {
     }
 }
 
+//code provided by abdi from 58-82
 struct TeamLogoView: View {
     let teamId: String?
 

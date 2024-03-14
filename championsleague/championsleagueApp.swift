@@ -32,7 +32,7 @@ struct championsleagueApp: App {
         }
         
         FirebaseApp.configure()
-        //let container = try! ModelContainer(for: Usera.self)
+        
         
     }
     
@@ -41,7 +41,6 @@ struct championsleagueApp: App {
         
         WindowGroup {
             ContentView(modelContext: container.mainContext)
-                //.modelContainer(for: Player.self)
 
         }
         .modelContainer(container)

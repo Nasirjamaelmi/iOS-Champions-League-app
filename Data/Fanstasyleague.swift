@@ -78,7 +78,7 @@ struct PlayerFantasyStats: Decodable, Identifiable {
 }
 
 
-
+// got help from chatAi with fantasystatprocessor but cannot share links because of the use of picture, chatAi says :)
 class FantasyStatsProcessor {
     static var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
     
@@ -130,7 +130,7 @@ final class Player: Identifiable {
         }
     
     var computedPrice: Double {
-            Double(fantasyPoints * 50000)
+            max(0, Double(fantasyPoints * 50000))
         }
     
     

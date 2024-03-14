@@ -150,17 +150,39 @@ class FootballModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
+
+    class FantasyLeagueViewModelTest: XCTestCase {
+      var user: Usera!
+      var player: Player!
+      var fantasyLeagueViewModel: FantasyLeagueViewModel!
+
+
+      func test_can_buy_player_sufficient_budget() throws {
+          XCTAssertTrue(fantasyLeagueViewModel.canBuyPlayer(player: player))
+      }
+
+      func test_can_buy_player_insufficient_budget() throws {
+        user.budget = 499999  // Set budget just below player price
+        fantasyLeagueViewModel.user = user  // Update user in ViewModel
+          XCTAssertFalse(fantasyLeagueViewModel.canBuyPlayer(player: player))
+      }
+
+
+      func test_can_buy_player_negative_price() throws {
+        player.price = -1000  // Set negative price
+          XCTAssertFalse(fantasyLeagueViewModel.canBuyPlayer(player: player))
+      }
+    }
+
    
-    
-    
-    
-
-
 
 
     
 
     // Add more test cases as needed
+    
+    
+    
     
 }
 

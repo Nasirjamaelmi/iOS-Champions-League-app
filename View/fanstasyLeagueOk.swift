@@ -120,22 +120,7 @@ let transactionDateFormatter: DateFormatter = {
 }()
 
 
-
 /*
-// Mock ViewModel for Preview
-class MockFantasyLeagueViewModel: FantasyLeagueViewModel {
-    override init() {
-        super.init()
-        self.availablePlayers = [
-            Player(id: 1, name: "Player One", price: 100000, fantasyPoints: [.goals: 5]),
-            Player(id: 2, name: "Player Two", price: 100000, fantasyPoints: [.assists: 7])
-        ]
-        // Recalculate price based on updated fantasy stats
-        self.availablePlayers.forEach { $0.price = $0.computedPrice }
-    }
-}
-
-
 // Preview
 struct FantasyLeagueView_Previews: PreviewProvider {
     static var previews: some View {

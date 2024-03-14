@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct LeaderboardView: View {
+    let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let players: [PlayerFantasyStats]
 
     var body: some View {
@@ -21,11 +22,7 @@ struct LeaderboardView: View {
                     Text("\(index + 1)")
                         .bold()
                         .frame(minWidth: 30, alignment: .leading)
-                    
-                    // Player Image - use PlayerPicView here
                     PlayerPicView(playerId: players[index].ParticiantId)
-
-                    // Player Name and Record
                     VStack(alignment: .leading) {
                         Text(players[index].name)
                             .font(.headline)
@@ -49,10 +46,6 @@ struct LeaderboardView: View {
                 }
                 .padding(.vertical, 5)
             }
-            .navigationTitle("Fantasy League Leaderboard")
-        }
-        .onAppear {
-            debugPrint(players)
         }
     }
 }

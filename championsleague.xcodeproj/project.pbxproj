@@ -94,6 +94,7 @@
 		0F9AFE982B9B453100254609 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		0F9AFE9C2B9B453B00254609 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1240F282B9B50D200A0E5A7 /* fanta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fanta.swift; sourceTree = "<group>"; };
+		B14184042BA308640005333F /* championsleague.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = championsleague.app; path = "../../../../Library/Developer/Xcode/DerivedData/championsleague-eqlofhmmfcdstegrajbpndmlyipu/Build/Products/Debug-iphonesimulator/championsleague.app"; sourceTree = "<group>"; };
 		B16557CA2BA073D2005FA96A /* championsleague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = championsleague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16557CB2BA073D2005FA96A /* championsleagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = championsleagueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16557CC2BA073D2005FA96A /* championsleagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = championsleagueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +233,7 @@
 		B1EEA54D2B8376E400299C5F /* championsleagueUITests */ = {
 			isa = PBXGroup;
 			children = (
+				B14184042BA308640005333F /* championsleague.app */,
 				B1EEA54E2B8376E400299C5F /* championsleagueUITests.swift */,
 				B1EEA5502B8376E400299C5F /* championsleagueUITestsLaunchTests.swift */,
 			);

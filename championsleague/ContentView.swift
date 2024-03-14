@@ -8,6 +8,7 @@
 import SwiftData
 import SwiftUI
 import Firebase
+//https://chat.openai.com/share/7339ceff-624d-4c4e-8ffc-26ad20f2b658
 
 struct ContentView: View {
     let modelContext: ModelContext
@@ -19,13 +20,13 @@ struct ContentView: View {
              tabScreen(fantasyModel: fan, modelContext: modelContext)
         }
         
-        .task {
-            await champ.loadfeed()
+        //.task {
+           // await champ.loadfeed()
             //await fan.loadfantasy()
         }
     }
     
-}
+//}
 
 //#Preview {
 //    ContentView()

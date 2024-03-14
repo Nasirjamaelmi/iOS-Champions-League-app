@@ -25,18 +25,10 @@ struct MatchesScreen: View {
                     .scaleEffect(1.5)
             } else {
                 VStack {
-                    // Live Matches Section
-                    
                     ScrollView(showsIndicators: false, content: {
                         MatchesSection
                     })
-                  
-                    
-                    
                     Spacer()
-                    
-                    // Upcoming Matches Section
-                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(colorGreen))

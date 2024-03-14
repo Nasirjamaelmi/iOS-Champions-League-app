@@ -33,13 +33,12 @@ struct tabScreen: View {
                 .tabItem {
                     Label("Standings" , systemImage: "soccerball")
                 }
-            StatsScreen(fantasyModel: fantasyModel)
+            LeaderBoardScreen(fantasyModel: fantasyModel)
                 .tabItem {
                     Label("Fantasy LeaderBoard", systemImage: "list.clipboard")
                 }
             
             FantasyScreen(fantasyModel: fantasyModel, modelContext: modelContext)
-                //.modelContainer(for: Player.self, inMemory: true)
                 .tabItem {
                     Label("Fantasy League", systemImage: "list.clipboard")
                 }
@@ -69,9 +68,7 @@ struct tabScreen: View {
         var body: some View {
             NavigationView {
                 VStack {
-                    // Use a ZStack to overlay the loading indicator on top of the current view
                     ZStack {
-                        // if footballModel.isLoading
                         Color(colorGreen)
                             .edgesIgnoringSafeArea(.all)
                         if isLoading {
@@ -81,16 +78,10 @@ struct tabScreen: View {
                                 .scaleEffect(1.5)
                         } else {
                             VStack {
-                                // Live Matches Section
                                 liveMatchesSection
-                                
                                 Spacer()
-                                
-                                // Upcoming Matches Section
                                 upcomingMatchesSection
                             }
-                            
-                            
                         }
                     }
                     .navigationTitle("Home")
@@ -106,7 +97,6 @@ struct tabScreen: View {
             }
         }
         
-        // Extracted view for live matches to clean up the body
         var liveMatchesSection: some View {
             let liveMatches = footballModel.footballData?.matches.allMatches.filter { $0.status.started && !$0.status.finished } ?? []
             
@@ -127,8 +117,6 @@ struct tabScreen: View {
             }
         }
         
-        
-        // Extracted view for upcoming matches to clean up the body
         var upcomingMatchesSection: some View {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
                 Text("Upcoming Matches").font(.headline).padding(.leading)
@@ -154,8 +142,11 @@ struct tabScreen: View {
         }
     }
     
-    struct StatsScreen: View {
+    
+    
+    struct LeaderBoardScreen: View {
         let fantasyModel: FantasyModel
+        let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
         @State var players: [PlayerFantasyStats] = []
         
         var body: some View {
@@ -167,7 +158,8 @@ struct tabScreen: View {
                         }
                 } else if players.count > 0 {
                     LeaderboardView(players: players)
-                        .navigationTitle("Stats Screen")
+                        .background(Color(colorGreen))
+                        .navigationTitle("Fantasy League Leaderboard")
                 } else {
                     Text("No data available")
                 }

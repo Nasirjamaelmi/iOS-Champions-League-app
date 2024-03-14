@@ -13,63 +13,26 @@ struct MatchCardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 200, height: 120)
+                .frame(width: 230, height: 120)
                 .foregroundStyle(.green)
             
             HStack {
-
+                TeamLogoView(teamId: match?.home.id)
                 Text(match?.home.name ?? "City")
                 
-                Text(match?.status.scoreStr ?? "-")
+                Text(match?.status.scoreStr ?? "2-2")
                  
                 Text(match?.away.name ?? "Barca")
-
-                //logo(for: match.home.id)
-                
-                VStack {
-                   // Text(match.home.name)
-                   // Text(match.status.scoreStr ?? "-")
-                    //Text(match.away.name)
-                }
-          
-                
-                //logo(for: match.away.id)
-
+                TeamLogoView(teamId: match?.away.id)
             }
             .fontWeight(.semibold)
             .foregroundStyle(.white)
         }
     }
-    
-
 }
 
 
 
-
-extension MatchCardView {
-    @ViewBuilder
-    func logo(for teamId: String?) -> some View {
-        if let teamId = teamId, let url = URL(string: "https://images.fotmob.com/image_resources/logo/teamlogo/\(teamId)_xsmall.png") {
-            AsyncImage(url: url) { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 40, height: 40)
-            .clipShape(Circle())
-            .shadow(radius: 2)
-        } else {
-            Image(systemName: "sportscourt")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-                .background(Color.gray.opacity(0.3))
-                .clipShape(Circle())
-        }
-    }
-}
 
 
 #Preview {

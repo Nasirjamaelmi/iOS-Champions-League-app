@@ -15,13 +15,11 @@ struct GroupStageCardView: View {
 
         VStack(spacing: 20) {
             Text(formattedGroupName)
-                .font(.title) // Adjust font and styling as needed
+                .font(.title)
 
             ForEach(Array(teams.enumerated()), id: \.1.name) { index, team in
                 HStack {
                     Spacer(minLength: 10)
-
-                    // Statistics
                     
                     Group {
                         if index < 2 {
@@ -83,66 +81,11 @@ struct StatisticView: View {
         .frame(minWidth: 50,alignment: .center)
     }
 }
-/*  HStack{
- Text("\(team.idx ?? 0)")
-     .font(.caption2)
-     .padding(.trailing, 3)
 
- HStack {
-     
-     logo(for: "\(team.id ?? 0 )")
-
-     Text(team.shortName ?? "Team Name")
-         .font(.caption)
-         .fontWeight(.bold)
-     
-     Spacer(minLength: 10)
-     
-     // Statistics
-     Group {
-         StatisticView(title: "PL", value: "\(team.played ?? 0)")
-         StatisticView(title: "W", value: "\(team.wins ?? 0)")
-         StatisticView(title: "D", value: "\(team.draws ?? 0)")
-         StatisticView(title: "L", value: "\(team.losses ?? 0)")
-         StatisticView(title: "GD", value: "\(team.goalConDiff ?? 0)")
-         StatisticView(title: "PTS", value: "\(team.pts ?? 0)")
-     }
-     .font(.caption2)
-     
- }
- .padding(10)
- .background(rankColor(team.idx))
- .cornerRadius(8)
-}}*/
 
 /*
-#Preview {
-    GroupStageCardView(groupName: "www", teams: [ChampionsLeagueData.TableData.TableDataContent.GroupTable.Group.Team()])
-}
-*/
-
-/*import SwiftUI
- 
- struct GroupStageCardView: View {
-     //let groupName: String
-     let groupName: String = "GroupA"
-     //let teams: ChampionsLeagueData.TableData.TableDataContent.GroupTable.Group.Team
-     let teams: ChampionsLeagueData.TableData.TableDataContent.GroupTable.Group.Team = ChampionsLeagueData.TableData.TableDataContent.GroupTable.Group.Team(name: "", shortName: "", id: 8633, pageUrl: "", played: 1, wins: 1, draws: 1, losses: 1, scoresStr: "aa", goalConDiff: 1, pts: 1, idx: 1)
-     var body: some View {
-         VStack(spacing: 20) {
-             Text(groupName)
-                 HStack {
-                     TeamLogoView(teamId: teams.idString)
-                     Text(teams.name)
-                     Text("\(teams.losses)")
-                 }
-                 Divider()
-         }
-     }
- }
-
-
  #Preview {
      GroupStageCardView()
  }
  */
+ 
