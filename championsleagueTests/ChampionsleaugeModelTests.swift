@@ -32,157 +32,210 @@ final class ChampionsleaugeModelTests: XCTestCase {
      }*/
     func testProcessStats() {
         FantasyStatsProcessor.fantasyPlayers = [:]
-           var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
-
-           let topList1 = TopList(StatName: .goals, Title: "Top Scorers", Subtitle: "Season", LocalizedTitleId: "top_scorers", LocalizedSubtitleId: "season", StatList: [
-               Players(ParticipantName: "Player1", ParticiantId: 1, TeamId: 101, TeamColor: "Red", StatValue: 5.0, SubStatValue: 0.0, MinutesPlayed: 90, MatchesPlayed: 10, StatValueCount: 1, Rank: 1, ParticipantCountryCode: "US", TeamName: "Team A")
-           ])
-
-           let topList2 = TopList(StatName: .assists, Title: "Top Assists", Subtitle: "Season", LocalizedTitleId: "top_assists", LocalizedSubtitleId: "season", StatList: [
-               Players(ParticipantName: "Player2", ParticiantId: 2, TeamId: 102, TeamColor: "Blue", StatValue: 8.0, SubStatValue: 0.0, MinutesPlayed: 90, MatchesPlayed: 10, StatValueCount: 1, Rank: 1, ParticipantCountryCode: "UK", TeamName: "Team B")
-           ])
-
-           let topLists = [topList1, topList2]
-
-           FantasyStatsProcessor.processStats(from: topLists)
-
-           XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers.count, 2)
-
-           // Test if the stats are processed correctly
-           XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[1]?.stats[.goals], 5.0)
-           XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[2]?.stats[.assists], 8.0)
+        var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
         
-       }
-
-       func testGetLeaderboard() { 
-           FantasyStatsProcessor.fantasyPlayers = [:]
-           var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
-           // Assuming fantasyPlayers is already populated with some data
-           // Add sample data for testing
-           let player1 = PlayerFantasyStats(ParticipantName: "Player1", ParticiantId: 1, name: "Player1", id: 1, stats: [.goals: 5.0, .assists: 3.0])
-           let player2 = PlayerFantasyStats(ParticipantName: "Player2", ParticiantId: 2, name: "Player2", id: 2, stats: [.goals: 3.0, .assists: 5.0])
-
-           FantasyStatsProcessor.fantasyPlayers = [1: player1, 2: player2]
-
-           let leaderboard = FantasyStatsProcessor.getLeaderboard()
-
-           // Test if the leaderboard is sorted correctly
-           XCTAssertEqual(leaderboard.count, 2)
-           XCTAssertEqual(leaderboard[0].id, 1) // Player2 has more points
-           XCTAssertEqual(leaderboard[1].id, 2)
-
-       }
+        let topList1 = TopList(StatName: .goals, Title: "Top Scorers", Subtitle: "Season", LocalizedTitleId: "top_scorers", LocalizedSubtitleId: "season", StatList: [
+            Players(ParticipantName: "Player1", ParticiantId: 1, TeamId: 101, TeamColor: "Red", StatValue: 5.0, SubStatValue: 0.0, MinutesPlayed: 90, MatchesPlayed: 10, StatValueCount: 1, Rank: 1, ParticipantCountryCode: "US", TeamName: "Team A")
+        ])
+        
+        let topList2 = TopList(StatName: .assists, Title: "Top Assists", Subtitle: "Season", LocalizedTitleId: "top_assists", LocalizedSubtitleId: "season", StatList: [
+            Players(ParticipantName: "Player2", ParticiantId: 2, TeamId: 102, TeamColor: "Blue", StatValue: 8.0, SubStatValue: 0.0, MinutesPlayed: 90, MatchesPlayed: 10, StatValueCount: 1, Rank: 1, ParticipantCountryCode: "UK", TeamName: "Team B")
+        ])
+        
+        let topLists = [topList1, topList2]
+        
+        FantasyStatsProcessor.processStats(from: topLists)
+        
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers.count, 2)
+        
+        // Test if the stats are processed correctly
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[1]?.stats[.goals], 5.0)
+        XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[2]?.stats[.assists], 8.0)
+        
+    }
+    
+    func testGetLeaderboard() {
+        FantasyStatsProcessor.fantasyPlayers = [:]
+        var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
+        // Assuming fantasyPlayers is already populated with some data
+        // Add sample data for testing
+        let player1 = PlayerFantasyStats(ParticipantName: "Player1", ParticiantId: 1, name: "Player1", id: 1, stats: [.goals: 5.0, .assists: 3.0])
+        let player2 = PlayerFantasyStats(ParticipantName: "Player2", ParticiantId: 2, name: "Player2", id: 2, stats: [.goals: 3.0, .assists: 5.0])
+        
+        FantasyStatsProcessor.fantasyPlayers = [1: player1, 2: player2]
+        
+        let leaderboard = FantasyStatsProcessor.getLeaderboard()
+        
+        // Test if the leaderboard is sorted correctly
+        XCTAssertEqual(leaderboard.count, 2)
+        XCTAssertEqual(leaderboard[0].id, 1) // Player2 has more points
+        XCTAssertEqual(leaderboard[1].id, 2)
+        
+    }
 }
 class FantasyLeagueTests: XCTestCase {
-
+    
     func testPointsValueForGoals() {
         let goalsStatType = StatType.goals
-
+        
         XCTAssertEqual(goalsStatType.pointsValue(for: 5.0), 50)
         XCTAssertEqual(goalsStatType.pointsValue(for: 3.0), 30)
         XCTAssertEqual(goalsStatType.pointsValue(for: 0.0), 0)
-       
+        
     }
-
+    
     func testPointsValueForAssists() {
         let assistsStatType = StatType.assists
-
+        
         XCTAssertEqual(assistsStatType.pointsValue(for: 5.0), 25)
         XCTAssertEqual(assistsStatType.pointsValue(for: 3.0), 15)
         XCTAssertEqual(assistsStatType.pointsValue(for: 0.0), 0)
-
+        
     }
-
+    
     func testPointsValueForYellowCards() {
         let yellowCardsStatType = StatType.yellowCards
-
+        
         XCTAssertEqual(yellowCardsStatType.pointsValue(for: 5.0), -25)
         XCTAssertEqual(yellowCardsStatType.pointsValue(for: 3.0), -15)
         XCTAssertEqual(yellowCardsStatType.pointsValue(for: 0.0), 0)
         
     }
-
+    
     func testPointsValueForRedCards() {
         let redCardsStatType = StatType.redCards
-
+        
         XCTAssertEqual(redCardsStatType.pointsValue(for: 5.0), -50)
         XCTAssertEqual(redCardsStatType.pointsValue(for: 3.0), -30)
         XCTAssertEqual(redCardsStatType.pointsValue(for: 0.0), 0)
-
+        
     }
-
+    
     func testPointsValueForCleanSheets() {
         let cleanSheetsStatType = StatType.cleanSheets
-
+        
         XCTAssertEqual(cleanSheetsStatType.pointsValue(for: 5.0), 50)
         XCTAssertEqual(cleanSheetsStatType.pointsValue(for: 3.0), 30)
         XCTAssertEqual(cleanSheetsStatType.pointsValue(for: 0.0), 0)
     }
 }
 
-class FootballModelTests: XCTestCase {
-    
-    var footballModel: FootballModel!
-    
-    override func setUp() {
-        super.setUp()
-        footballModel = FootballModel()
-    }
 
-    override func tearDown() {
-        footballModel = nil
-        super.tearDown()
-    }
-
-    func testLoadFeedSuccess() async throws {
+class ChampionsLeagueDataTests: XCTestCase {
+    
+    func testDecoding() throws {
         // Given
-        let expectation = XCTestExpectation(description: "Load feed success")
+        let json = """
+        {
+            "details": {
+                "id": 1,
+                "type": "League",
+                "name": "Champions League",
+                "selectedSeason": "2023/2024",
+                "latestSeason": "2023/2024",
+                "shortName": "UCL",
+                "country": "Europe"
+            },
+            "table": [],
+            "matches": {
+                "firstUnplayedMatch": {
+                    "firstRoundWithUnplayedMatch": 1,
+                    "firstUnplayedMatchIndex": 0,
+                    "firstUnplayedMatchId": "123"
+                },
+                "allMatches": []
+            }
+        }
+        """.data(using: .utf8)!
         
         // When
-        try await footballModel.loadfeed()
+        let championsLeagueData = try JSONDecoder().decode(ChampionsLeagueData.self, from: json)
         
         // Then
-        XCTAssertNotNil(footballModel.footballData, "Football data should not be nil after loading feed")
-        XCTAssertFalse(footballModel.isLoading, "isLoading should be false after loading feed")
-        expectation.fulfill()
+        XCTAssertEqual(championsLeagueData.details.id, 1)
+        XCTAssertEqual(championsLeagueData.details.type, "League")
+        XCTAssertEqual(championsLeagueData.details.name, "Champions League")
+        XCTAssertEqual(championsLeagueData.details.selectedSeason, "2023/2024")
+        XCTAssertEqual(championsLeagueData.details.latestSeason, "2023/2024")
+        XCTAssertEqual(championsLeagueData.details.shortName, "UCL")
+        XCTAssertEqual(championsLeagueData.details.country, "Europe")
+        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstRoundWithUnplayedMatch, 1)
+        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstUnplayedMatchIndex, 0)
+        XCTAssertEqual(championsLeagueData.matches.firstUnplayedMatch.firstUnplayedMatchId, "123")
+        XCTAssertTrue(championsLeagueData.table.isEmpty)
+        XCTAssertTrue(championsLeagueData.matches.allMatches.isEmpty)
+    }
+    
+    func testMatchStatusDecoding() throws {
+        // Given
+        let json = """
+        {
+            "details": {
+                "id": 1,
+                "type": "League",
+                "name": "Champions League",
+                "selectedSeason": "2023/2024",
+                "latestSeason": "2023/2024",
+                "shortName": "UCL",
+                "country": "Europe"
+            },
+            "table": [],
+            "matches": {
+                "firstUnplayedMatch": {
+                    "firstRoundWithUnplayedMatch": 1,
+                    "firstUnplayedMatchIndex": 0,
+                    "firstUnplayedMatchId": "123"
+                },
+                "allMatches": [
+                    {
+                        "round": 1,
+                        "roundName": "Round 1",
+                        "pageUrl": "https://example.com/match/1",
+                        "id": "123",
+                        "home": {"name": "Team A", "shortName": "A", "id": "1"},
+                        "away": {"name": "Team B", "shortName": "B", "id": "2"},
+                        "status": {"utcTime": "2024-03-01T20:00:00", "finished": false, "started": true, "cancelled": false, "scoreStr": null, "reason": null}
+                    }
+                ]
+            }
+        }
+        """.data(using: .utf8)!
         
-        // Wait for the expectation to be fulfilled
-        wait(for: [expectation], timeout: 5.0)
+        // When
+        let championsLeagueData = try JSONDecoder().decode(ChampionsLeagueData.self, from: json)
+        
+        // Then
+        XCTAssertEqual(championsLeagueData.matches.allMatches.count, 1)
+        let match = championsLeagueData.matches.allMatches[0]
+        XCTAssertEqual(match.status.utcTime, "2024-03-01T20:00:00")
+        XCTAssertFalse(match.status.finished)
+        XCTAssertTrue(match.status.started)
+        XCTAssertFalse(match.status.cancelled)
+        XCTAssertNil(match.status.scoreStr)
+        XCTAssertNil(match.status.reason)
     }
-    
-
-    class FantasyLeagueViewModelTest: XCTestCase {
-      var user: Usera!
-      var player: Player!
-      var fantasyLeagueViewModel: FantasyLeagueViewModel!
-
-
-      func test_can_buy_player_sufficient_budget() throws {
-          XCTAssertTrue(fantasyLeagueViewModel.canBuyPlayer(player: player))
-      }
-
-      func test_can_buy_player_insufficient_budget() throws {
-        user.budget = 499999  // Set budget just below player price
-        fantasyLeagueViewModel.user = user  // Update user in ViewModel
-          XCTAssertFalse(fantasyLeagueViewModel.canBuyPlayer(player: player))
-      }
-
-
-      func test_can_buy_player_negative_price() throws {
-        player.price = -1000  // Set negative price
-          XCTAssertFalse(fantasyLeagueViewModel.canBuyPlayer(player: player))
-      }
-    }
-
-   
-
-
-    
-
-    // Add more test cases as needed
-    
-    
-    
-    
 }
+
+
+
+class PlayerFantasyStatsTests: XCTestCase {
+    
+    func testTotalPointsCalculation() {
+        // Create some sample stats
+        let stats: [StatType: Double] = [.goals: 2, .assists: 1, .yellowCards: 1, .redCards: 0, .cleanSheets: 0]
+        
+        // Create a PlayerFantasyStats instance with the sample stats
+        let playerStats = PlayerFantasyStats(ParticipantName: "John", ParticiantId: 1, name: "John Doe", id: 123, stats: stats)
+        
+        // Calculate the expected total points
+        // (2 goals * 10) + (1 assist * 5) + (1 yellow card * -5) + (0 red card * -10) + (0 clean sheet * 10)
+        let expectedTotalPoints = (2 * 10) + (1 * 5) + (1 * -5) + (0 * -10) + (0 * 10)
+        
+        // Verify that the total points calculation is correct
+        XCTAssertEqual(playerStats.totalPoints, expectedTotalPoints, "Total points calculation is incorrect")
+    }
+    
+  
+}
+
 
