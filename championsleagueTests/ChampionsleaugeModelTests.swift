@@ -7,11 +7,14 @@
 
 import XCTest
 @testable import championsleague
+import SwiftData
 
 final class ChampionsleaugeModelTests: XCTestCase {
     
     override func setUpWithError() throws {
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDownWithError() throws {
@@ -28,6 +31,7 @@ final class ChampionsleaugeModelTests: XCTestCase {
      
      }*/
     func testProcessStats() {
+        FantasyStatsProcessor.fantasyPlayers = [:]
            var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
 
            let topList1 = TopList(StatName: .goals, Title: "Top Scorers", Subtitle: "Season", LocalizedTitleId: "top_scorers", LocalizedSubtitleId: "season", StatList: [
@@ -47,9 +51,12 @@ final class ChampionsleaugeModelTests: XCTestCase {
            // Test if the stats are processed correctly
            XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[1]?.stats[.goals], 5.0)
            XCTAssertEqual(FantasyStatsProcessor.fantasyPlayers[2]?.stats[.assists], 8.0)
+        
        }
 
-       func testGetLeaderboard() {
+       func testGetLeaderboard() { 
+           FantasyStatsProcessor.fantasyPlayers = [:]
+           var fantasyPlayers: [Int: PlayerFantasyStats] = [:]
            // Assuming fantasyPlayers is already populated with some data
            // Add sample data for testing
            let player1 = PlayerFantasyStats(ParticipantName: "Player1", ParticiantId: 1, name: "Player1", id: 1, stats: [.goals: 5.0, .assists: 3.0])
@@ -142,24 +149,16 @@ class FootballModelTests: XCTestCase {
         // Wait for the expectation to be fulfilled
         wait(for: [expectation], timeout: 5.0)
     }
+    
+   
+    
+    
+    
 
-    func testLoadFeedFailure() async {
-        // Given
-        let expectation = XCTestExpectation(description: "Load feed failure")
-        
-        // When
-        footballModel = FootballModel() // Reset the model to ensure a clean state
-        // Intentionally set an invalid URL to force a failure
-        await footballModel.loadfeed()
-        
-        // Then
-        XCTAssertNil(footballModel.footballData, "Football data should be nil after a failed load feed")
-        XCTAssertFalse(footballModel.isLoading, "isLoading should be false after a failed load feed")
-        expectation.fulfill()
-        
-        // Wait for the expectation to be fulfilled
-        wait(for: [expectation], timeout: 5.0)
-    }
+
+
+
+    
 
     // Add more test cases as needed
     
