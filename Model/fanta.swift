@@ -16,12 +16,12 @@ import FirebaseAuth
 @Observable
 class FantasyLeagueViewModel{
     var modelContext: ModelContext
-    var user: Usera?
+    var user: Client?
     var availablePlayers: [Player]
     let fantasyModel: FantasyModel
   
     
-    init(modelContext: ModelContext, user: Usera? = nil, availablePlayers: [Player], fantasyModel: FantasyModel) {
+    init(modelContext: ModelContext, user: Client? = nil, availablePlayers: [Player], fantasyModel: FantasyModel) {
         self.modelContext = modelContext
         self.user = user
         self.availablePlayers = availablePlayers
@@ -54,7 +54,7 @@ class FantasyLeagueViewModel{
     
     private func updateUser() {
         do {
-            let descriptor = FetchDescriptor<Usera>()
+            let descriptor = FetchDescriptor<Client>()
             let users = try modelContext.fetch(descriptor)
             guard let user = users.first, users.count == 1 else { fatalError("Found more than 1 user") }
             self.user = user
@@ -65,11 +65,11 @@ class FantasyLeagueViewModel{
     
     private func checkForUser() {
         do {
-            let descriptor = FetchDescriptor<Usera>()
+            let descriptor = FetchDescriptor<Client>()
             let users = try modelContext.fetch(descriptor)
             
             if users.count > 1 {
-                try? modelContext.delete(model: Usera.self)
+                try? modelContext.delete(model: Client.self)
                 try? modelContext.delete(model: Transaction.self)
             }
             
@@ -77,7 +77,7 @@ class FantasyLeagueViewModel{
                 self.user = user
                 print("Found user in modelContext, will not create new user")
             } else {
-                let newUser = Usera(username: "user", budget: 3000000)
+                let newUser = Client(username: "user", budget: 3000000)
                 modelContext.insert(newUser)
                 // try? modelContext.save()
                 self.user = newUser

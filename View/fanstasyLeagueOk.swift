@@ -14,50 +14,51 @@ struct FantasyLeagueView: View {
     @State private var selectedTab = 0
     @State private var isDataLoaded = false
     @State private var searchText = ""
+    
+    var searchFilteredPlayers: [Player] {
+            searchText.isEmpty ? viewModel.availablePlayers : viewModel.availablePlayers.filter {
+                $0.name.lowercased().contains(searchText.lowercased())
+            }
+        }
 
-    var body: some View {
-        TabView(selection: $selectedTab) {
-            NavigationView {
-                List {
-                    Section(header: Text("Available Players")) {
-                        TextField("Search Players", text: $searchText)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-
-                        ForEach(viewModel.availablePlayers.filter { player in
-                            searchText.isEmpty || player.name.lowercased().contains(searchText.lowercased())
-                        }) { player in
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(player.name).font(.headline)
-                                    Text("Fantasy Points: \(player.fantasyPoints)")
-                                    Text("Price: \(player.price, specifier: "%.2f")")
-                                }
-                                Spacer()
-                                if viewModel.canBuyPlayer(player: player) {
-                                    Button("Buy") {
-                                        viewModel.buyPlayer(player: player)
+        var body: some View {
+            TabView(selection: $selectedTab) {
+                NavigationView {
+                    List {
+                        Section(header: Text("Available Players")) {
+                            ForEach(searchFilteredPlayers, id: \.self) { player in
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(player.name).font(.headline)
+                                        Text("Fantasy Points: \(player.fantasyPoints)")
+                                        Text("Price: \(player.price, specifier: "%.2f")")
                                     }
-                                    .buttonStyle(.borderedProminent)
+                                    Spacer()
+                                    if viewModel.canBuyPlayer(player: player) {
+                                        Button("Buy") {
+                                            viewModel.buyPlayer(player: player)
+                                        }
+                                        .buttonStyle(.borderedProminent)
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                .navigationTitle("Available Players")
-                .onAppear {
-                    Task {
-                        if !isDataLoaded {
-                            await viewModel.loadData()
-                            isDataLoaded = true
+                    .navigationTitle("Available Players")
+                    .searchable(text: $searchText, prompt: "Search Players") // Add searchable modifier here
+                    .onAppear {
+                        Task {
+                            if !isDataLoaded {
+                                await viewModel.loadData()
+                                isDataLoaded = true
+                            }
                         }
                     }
                 }
-            }
-            .tabItem {
-                Label("Market", systemImage: "dollarsign.circle")
-            }
-            .tag(0)
+                .tabItem {
+                    Label("Market", systemImage: "dollarsign.circle")
+                }
+                .tag(0)
             
            NavigationView {
                List {

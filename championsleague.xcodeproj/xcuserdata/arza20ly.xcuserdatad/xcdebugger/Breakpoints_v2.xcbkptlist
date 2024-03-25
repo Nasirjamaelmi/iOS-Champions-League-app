@@ -18,68 +18,6 @@
             endingLineNumber = "29"
             landmarkName = "loadfeed()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - db82029b068bddea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "276">
-               </Location>
-               <Location
-                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - fc76c73ad7e29d87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - 9c8489a1163e8194"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "4FCDC6A3-5653-4F78-9F80-8BBDEF3219FC - c03bd53a1f9b2f97"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for championsleague.FootballModel.loadfeed() async -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Desktop/untitled%20folder/Model/championsgetdata.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,38 +34,6 @@
             endingLineNumber = "2"
             landmarkName = "unknown"
             landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "A998B0E5-5ECB-45DE-9E96-148446C59987 - ba64308a6ec3bb72"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.Usera.init(id: Foundation.UUID, username: Swift.String, budget: Swift.Double) -&gt; championsleague.Usera"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/yy/7hh2341s79lg_wz2k0gnpn4nvry208/T/swift-generated-sources/@__swiftmacro_15championsleague5Usera5ModelfMm_.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2"
-                  endingLineNumber = "2"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  uuid = "A998B0E5-5ECB-45DE-9E96-148446C59987 - a050c33842e54743"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.Usera.init(backingData: any SwiftData.BackingData&lt;Self.SwiftData.BackingData.Model == championsleague.Usera&gt;) -&gt; championsleague.Usera"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///var/folders/yy/7hh2341s79lg_wz2k0gnpn4nvry208/T/swift-generated-sources/@__swiftmacro_15championsleague5Usera5ModelfMm_.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2"
-                  endingLineNumber = "2"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,38 +50,6 @@
             endingLineNumber = "129"
             landmarkName = "sellPlayer(player:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36BD64A0-0887-40E6-8C6E-9885A6704838 - 93cd25b926b5fd8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "36BD64A0-0887-40E6-8C6E-9885A6704838 - 93cd25b926b5fd8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,38 +66,6 @@
             endingLineNumber = "130"
             landmarkName = "sellPlayer(player:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "76197D1D-0168-438F-8E12-80DFA8B15B84 - 93cd25b926b5fd68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "76197D1D-0168-438F-8E12-80DFA8B15B84 - 93cd25b926b5fd68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "championsleague.FantasyLeagueViewModel.sellPlayer(player: championsleague.Player) -&gt; ()"
-                  moduleName = "championsleague"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arza20ly/Documents/GitHub/ios-final-project-group-10-theboyz/Model/fanta.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

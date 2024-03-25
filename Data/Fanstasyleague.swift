@@ -160,7 +160,7 @@ final class Player: Identifiable {
 
 
 @Model
-class Usera {
+class Client {
     let id: UUID = UUID()
     var username: String
     var budget: Double
@@ -179,11 +179,11 @@ class Usera {
 class Transaction {
     let id: UUID = UUID()
     @Relationship(deleteRule: .noAction) var player: Player
-    @Relationship(deleteRule: .nullify) var user: Usera
+    @Relationship(deleteRule: .nullify) var user: Client
     var isPurchase: Bool
     var transactionDate: Date
     
-    init(player: Player, user: Usera, isPurchase: Bool, transactionDate: Date = Date()) {
+    init(player: Player, user: Client, isPurchase: Bool, transactionDate: Date = Date()) {
         self.player = player
         self.user = user
         self.isPurchase = isPurchase

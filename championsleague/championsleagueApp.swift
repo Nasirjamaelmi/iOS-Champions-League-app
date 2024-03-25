@@ -26,7 +26,7 @@ struct championsleagueApp: App {
     
     init() {
         do {
-            container = try ModelContainer(for: Usera.self, Transaction.self)
+            container = try ModelContainer(for: Client.self, Transaction.self)
         } catch {
             fatalError("Failed to create modelcontainer for model")
         }
