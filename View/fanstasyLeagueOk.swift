@@ -45,7 +45,7 @@ struct FantasyLeagueView: View {
                         }
                     }
                     .navigationTitle("Available Players")
-                    .searchable(text: $searchText, prompt: "Search Players") // Add searchable modifier here
+                    .searchable(text: $searchText)
                     .onAppear {
                         Task {
                             if !isDataLoaded {
