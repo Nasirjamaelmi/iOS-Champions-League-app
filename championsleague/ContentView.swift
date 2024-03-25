@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-             tabScreen(fantasyModel: fan, modelContext: modelContext)
+             TabScreen(fantasyModel: fan, modelContext: modelContext)
         }
         
         //.task {

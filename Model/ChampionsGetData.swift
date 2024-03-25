@@ -25,7 +25,6 @@ class FootballModel{
         }
         isLoading = true
         
-        
         do{
             let (data,_) = try await URLSession.shared.data(from: url)
             //print(data)
@@ -34,11 +33,11 @@ class FootballModel{
             footballData = football
           
             }
+        
         catch{
             print(error)
         }
        isLoading = false
-        
     }
     
     private func separateGroupData(_ data: ChampionsLeagueData) {

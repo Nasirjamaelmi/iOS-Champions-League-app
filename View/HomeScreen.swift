@@ -11,13 +11,13 @@ import Foundation
 
 
 
-struct tabScreen: View {
+struct TabScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let fantasyModel: FantasyModel
     let modelContext: ModelContext
     var body: some View {
         TabView{
-            homeScreen()
+            HomeScreen()
                 .tabItem {
                     Label("Home", systemImage: "house.circle.fill")
                 }
@@ -53,7 +53,7 @@ struct tabScreen: View {
     
     
     
-    struct homeScreen: View {
+    struct HomeScreen: View {
         let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
         let colorDark = UIColor(red: 0x39, green:0x47, blue: 0x38)
         let footballModel = FootballModel()
@@ -193,7 +193,6 @@ struct tabScreen: View {
             FantasyLeagueView(viewModel: viewModel)
         }
     }
-                                
 }
 
 
