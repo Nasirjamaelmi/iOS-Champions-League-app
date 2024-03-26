@@ -11,7 +11,7 @@ struct StagesScreen: View {
     let colorGreen = UIColor(red: 0xAE, green:0xC7, blue: 0xAD)
     let footballModel = FootballModel()
     
-    var FinishedMatches: [ChampionsLeagueData.MatchData.Match] {
+    var finishedMatches: [ChampionsLeagueData.MatchData.Match] {
         footballModel.footballData?.matches.allMatches.filter { $0.status.started } ?? []
     }
     var body: some View {
